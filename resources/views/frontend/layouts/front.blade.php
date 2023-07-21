@@ -90,8 +90,8 @@
                                     <a href="#">Applications</a>
                                     <ul class="dl-submenu">
                                         <li><a href="/university-placement">University Placement Program</a></li>
-                                        <li><a href="/youth-employment'">Youth Seeking Employment</a></li>
-                                        <li><a href="/registered-group'">Registered Groups</a></li>
+                                        <li><a href="/youth-employment">Youth Seeking Employment</a></li>
+                                        <li><a href="/registered-group">Registered Groups</a></li>
 
                                     </ul>
                                 </li>
