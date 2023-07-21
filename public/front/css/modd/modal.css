@@ -1,0 +1,96 @@
+.my-custom-css body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #d1c4e9;
+    background-repeat: no-repeat;
+}
+
+.my-custom-css .container {
+    margin: 200px auto;
+}
+
+.my-custom-css fieldset {
+    display: none;
+}
+
+.my-custom-css fieldset.show {
+    display: block;
+}
+
+.my-custom-css select:focus,
+.my-custom-css input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #2196f3 !important;
+    outline-width: 0 !important;
+    font-weight: 400;
+}
+
+.my-custom-css button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0;
+}
+
+.my-custom-css .tabs {
+    margin: 2px 5px 0px 5px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.my-custom-css .tabs:hover,
+.my-custom-css .tabs.active {
+    border-bottom: 1px solid #2196f3;
+}
+
+.my-custom-css a:hover {
+    text-decoration: none;
+    color: #1565c0;
+}
+
+.my-custom-css .box {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.my-custom-css .modal-backdrop {
+    background-color: #64b5f6;
+}
+
+.my-custom-css .line {
+    background-color: #cfd8dc;
+    height: 1px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .my-custom-css .tabs h6 {
+        font-size: 12px;
+    }
+}
+
+/* Custom CSS for the modal pop-up window */
+.my-custom-css #myModal.modal {
+    /* Your styles here */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    /* ... */
+}
+
+.my-custom-css #myModal.modal h6.text-muted {
+    /* Styles for h6 tags with the class "text-muted" within the modal */
+    color: #888;
+    /* ... */
+}
+
+.my-custom-css #myModal.modal .btn {
+    /* Styles for buttons within the modal */
+    background-color: #333;
+    color: #fff;
+    /* ... */
+}

@@ -1,0 +1,96 @@
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #d1c4e9;
+    background-repeat: no-repeat;
+}
+
+.container {
+    margin: 200px auto;
+}
+
+fieldset {
+    display: none;
+}
+
+fieldset.show {
+    display: block;
+}
+
+select:focus,
+input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #2196f3 !important;
+    outline-width: 0 !important;
+    font-weight: 400;
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0;
+}
+
+.tabs {
+    margin: 2px 5px 0px 5px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.tabs:hover,
+.tabs.active {
+    border-bottom: 1px solid #2196f3;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #1565c0;
+}
+
+.box {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.modal-backdrop {
+    background-color: #64b5f6;
+}
+
+.line {
+    background-color: #cfd8dc;
+    height: 1px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .tabs h6 {
+        font-size: 12px;
+    }
+}
+
+/* Custom CSS for the modal pop-up window */
+#myModal.modal {
+    /* Your styles here */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    /* ... */
+}
+
+#myModal.modal h6.text-muted {
+    /* Styles for h6 tags with the class "text-muted" within the modal */
+    color: #888;
+    /* ... */
+}
+
+#myModal.modal .btn {
+    /* Styles for buttons within the modal */
+    background-color: #333;
+    color: #fff;
+    /* ... */
+}
