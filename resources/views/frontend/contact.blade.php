@@ -9,7 +9,7 @@
             <div class="container">
                 <h1>Contact Us</h1>
                 <ul class="breadcrumbs">
-                    <li><a href="index.html">Home</a> /</li>
+                    <li><a href="/">Home</a> /</li>
                     <li>Contact Us</li>
                 </ul>
             </div>
@@ -39,14 +39,15 @@
                                 <p><a href="mailto:abcxyz@abc.com">youthaffairs@mandera.go.ke</a></p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="icon_box"><i class="fa fa-envelope"></i></div>
-                        <div class="info_txt">
-                            <h4>Email</h4>
-                            <p><a href="mailto:abcxyz@abc.com">genderservices@mandera.go.ke</a></p>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="icon_box"><i class="fa fa-envelope"></i></div>
+                            <div class="info_txt">
+                                <h4>Email</h4>
+                                <p><a href="mailto:abcxyz@abc.com">genderservices@mandera.go.ke</a></p>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -59,8 +60,9 @@
                         <input class="form-control" placeholder="Your Name..." name="name" type="text">
                         <input class="form-control" placeholder="Email Addrress..." name="email" type="text">
                         <textarea class="form-control" rows="7" placeholder="Message..." name="message"></textarea>
-                        <button type="text" class="btn btn_contact">Submit <i class="fa fa-check"></i></button>
+
                     </form>
+                    <button type="text" class="btn btn_contact">Submit <i class="fa fa-check"></i></button>
                 </div>
             </div>
 
