@@ -536,36 +536,14 @@
             </div>
         </div>
     </div>
-    <!-- registeration modal  -->
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- model end here -->
 
 
     <div id="courses" class="courses">
         <div class="container" style="background-color: #eeeee4">
             <div class="head_part">
                 <h2>Available Opportunities</h2>
-                <p>Join our growing global community of over 25 million learners.</p>
+                <p>Join our growing global community of over a million Members.</p>
             </div>
             <div class="course_wrapper">
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="background-color: #eeeee4">
@@ -578,13 +556,16 @@
                         <div class="science">
                             <div class="icon"><i class="fa fa-heartbeat"></i></div>
                             <div class="course_info">
-                                <h4>Nurcing jobs in Qatar</h4>
-                                <p>Business Trends changing with latest courses are available with us.</p>
+                                <h4>Nursing jobs in Qatar</h4>
+                                <p>Are you a dedicated and compassionate nurse looking for exciting opportunities in
+                                    Qatar? Join our team and be a part of the dynamic healthcare landscape in one of the
+                                    fastest-growing countries in the region. We are seeking skilled and passionate
+                                    nurses like you to provide exceptional care to our patients.</p>
                             </div>
                         </div>
                         <div class="science course_count_wrap">
                             <div class="course_count">
-                                Vaccancy: <span>40</span>
+                                Vaccancy: <span>10</span>
                             </div>
                             <!-- <div class="course_price">
                             Salary: <span>ksh 150000.00</span>
@@ -602,13 +583,14 @@
                         <div class="science">
                             <div class="icon"><i class="fa fa-heartbeat"></i></div>
                             <div class="course_info">
-                                <h4>Nurcing jobs in Qatar</h4>
-                                <p>Business Trends changing with latest courses are available with us.</p>
+                                <h4>Nursing jobs in Turkey</h4>
+                                <p>Join our team and be a part of the dynamic healthcare landscape in one of the
+                                    fastest-growing countries in the region.</p>
                             </div>
                         </div>
                         <div class="science course_count_wrap">
                             <div class="course_count">
-                                Vaccancy: <span>40</span>
+                                Vaccancy: <span>30</span>
                             </div>
                             <!-- <div class="course_price">
                             Salary: <span>ksh 150000.00</span>
@@ -626,8 +608,9 @@
                         <div class="science">
                             <div class="icon"><i class="fa fa-heartbeat"></i></div>
                             <div class="course_info">
-                                <h4>Nurcing jobs in Qatar</h4>
-                                <p>Business Trends changing with latest courses are available with us.</p>
+                                <h4>Nursing jobs in Saudi Arabia</h4>
+                                <p> We are seeking skilled and passionate
+                                    nurses like you to provide exceptional care to our patients.</p>
                             </div>
                         </div>
                         <div class="science course_count_wrap">

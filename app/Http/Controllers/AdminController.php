@@ -16,9 +16,9 @@ class AdminController extends Controller
     public function index(){
 
         $job = Job::where('group_type', 'LIKE', 'employment')->count();
-        $youth = Job::where('group_type', 'LIKE', 'youth')->count();
-        $pwd = Job::where('group_type', 'LIKE', 'pwd')->count();
-        $woman = Job::where('group_type', 'LIKE', 'woman')->count();
+        $youth = Registration::where('group_type', 'LIKE', 'youth')->count();
+        $pwd = Registration::where('group_type', 'LIKE', 'pwd')->count();
+        $women = Registration::where('group_type', 'LIKE', 'women')->count();
         $postgraduate = Job::where('education', 'LIKE', 'Postgraduate')->count();
         $graduate = Job::where('education', 'LIKE', 'Undergraduate')->count();
         $college = Job::where('education', 'LIKE', 'College')->count();
@@ -29,7 +29,7 @@ class AdminController extends Controller
             'job' => $job,
             'youth' => $youth,
             'pwd' => $pwd,
-            'woman' => $woman,
+            'women' => $women,
             'postgraduate' => $postgraduate,
             'graduate' => $graduate,
             'college' => $college,

@@ -115,7 +115,7 @@
 
                                 <li><a class="trigger" href="/">Home</a></li>
                                 <!-- <li><a class="trigger" href="/about_us">About</a></li> -->
-                                <li><a class="trigger" href="#">Application <i class="fa fa-angle-down"></i></a>
+                                <li><a class="trigger" href="#">Applications <i class="fa fa-angle-down"></i></a>
                                     <ul class="submenu">
                                         <li><a href="/university-placement">University Program</a></li>
                                         <li><a href="/youth-employment">employment program</a></li>
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="footer_email"><i class="fa fa-envelope"></i> <a
                                         href="mailto:abcxyz@abc.com">mogender.youth@mandera.go.ke</a></div>
-                                <div class="footer_phone"><i class="fa fa-phone"></i> +1 800 123 1234</div>
+                                <div class="footer_phone"><i class="fa fa-phone"></i> +254 7 123 1234</div>
                                 <div class="social_links">
                                     <a href="#" target="_blank" rel="external nofollow" title="Share it"><i
                                             class="fa fa-facebook"></i></a>
@@ -182,8 +182,8 @@
                                         <div class="foot_letnews_img"><img alt="" src="front/images/youth.jpg">
                                         </div>
                                         <div class="foot_letnews_info">
-                                            <h4><a href="#">H.E. Mohamed Adan Khalif Government is panning to sent over
-                                                    3000 youth abroad</a></h4>
+                                            <h4><a href="#">H.E. Mohamed Adan Khalif Vision 2030
+                                                </a></h4>
                                             <em>jun 23, 2023</em>
                                         </div>
                                     </li>
