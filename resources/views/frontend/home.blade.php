@@ -19,7 +19,7 @@
                                 data-thumb="images/slider_with_instructor.jpg" data-rotate="0"
                                 data-saveperformance="off" data-title="Instructor" data-description="">
 
-                                <img src="{{asset('front/images/sport1.jpg')}}" alt="" data-bgposition="center center"
+                                <img src="{{asset('front/images/sport1.JPG')}}" alt="" data-bgposition="center center"
                                     data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10"
                                     class="rev-slidebg" data-no-retina>
 
@@ -277,7 +277,7 @@
                                 data-thumb="images/slider_with_instructor.jpg" data-rotate="0"
                                 data-saveperformance="off" data-title="Instructor" data-description="">
 
-                                <img src="{{asset('front/images/sport2.jpg')}}" alt="" data-bgposition="center center"
+                                <img src="{{asset('front/images/sport2.JPG')}}" alt="" data-bgposition="center center"
                                     data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10"
                                     class="rev-slidebg" data-no-retina>
 
@@ -364,7 +364,7 @@
                                 data-thumb="images/slider_inclass.jpg" data-rotate="0" data-saveperformance="off"
                                 data-title="Learning" data-description="">
 
-                                <img src="{{asset('front/images/sport.jpg')}}" alt="" data-bgposition="center center"
+                                <img src="{{asset('front/images/sport.JPG')}}" alt="" data-bgposition="center center"
                                     data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10"
                                     class="rev-slidebg" data-no-retina>
 
