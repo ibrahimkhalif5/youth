@@ -143,7 +143,9 @@
             @yield('content')
             <footer class="main-footer">
                 <div class="footer-left">
-                    <a href="templateshub.net">Templateshub</a></a>
+                    <p> Copyright &copy; 2023-<script>
+                        document.write(new Date().getFullYear())
+                        </script> Mandera County Powered by Abdotech Solutions</p>
                 </div>
                 <div class="footer-right">
                 </div>

@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Available Opportunities</h4>
+                            <h4>Registered Users</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
