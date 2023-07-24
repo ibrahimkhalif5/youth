@@ -59,7 +59,7 @@
                         <input class="form-control" placeholder="Your Name..." name="name" type="text">
                         <input class="form-control" placeholder="Email Addrress..." name="email" type="text">
                         <textarea class="form-control" rows="7" placeholder="Message..." name="message"></textarea>
-                        <button type="submit" class="btn btn_contact">Submit <i class="fa fa-check"></i></button>
+                        <button type="text" class="btn btn_contact">Submit <i class="fa fa-check"></i></button>
                     </form>
                 </div>
             </div>
