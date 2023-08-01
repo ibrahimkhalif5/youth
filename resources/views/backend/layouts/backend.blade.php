@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Ministry of Youth, Gender and Social Services</title>
+    <title>Ministry of Social Development</title>
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('back/assets/css/app.min.css') }}">
     <!-- Template CSS -->
@@ -54,7 +54,7 @@
                     <h5>{{ Auth::user()->name }}</h5>
                     <li class="dropdown"><a href="#" data-toggle="dropdown"
                             class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image"
-                                src="back/assets/img/mdr1.png" class="user-img-radious-style"> <span
+                                src="{{asset('back/assets/img/mdr1.png')}}" class="user-img-radious-style"> <span
                                 class="d-sm-none d-lg-inline-block"></span></a>
                         <div class="dropdown-menu dropdown-menu-right pullDown">
 
@@ -75,7 +75,8 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html"> <img alt="image" src="back/assets/img/mdr1.png" class="header-logo" />
+                        <a href="index.html"> <img alt="image" src="{{asset('back/assets/img/mdr1.png')}}"
+                                class="header-logo" />
                             <span class="logo-name">Mandera</span>
                         </a>
                     </div>
@@ -101,6 +102,24 @@
 
                             </ul>
                         </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+                                    data-feather="briefcase"></i><span>Gallery</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/gallery-add">Add images</a></li>
+                                <li><a class="nav-link" href="/gallery">View </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown active">
+                            <a href="/contact-us" class="nav-link">
+                                <i data-feather="mail"></i>
+                                <span>Messages</span>
+                                <span class="badge">(3)</span> <!-- Replace "3" with the actual counter value -->
+                            </a>
+                        </li>
+
                         <!-- <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="mail"></i><span>Gallery</span></a>

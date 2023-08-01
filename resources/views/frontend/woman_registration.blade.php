@@ -105,6 +105,11 @@
 
                                 </select>
                             </div>
+                            <div class="form-group col-md-6">
+                                <lebel class="pb-4">Registration certificate</lebel>
+                                <input id="reg_cert" name="reg_cert" class="form-control" type="file"
+                                    accept=".png, .jpeg, .jpg, image/*">
+                            </div>
 
                         </div>
 
@@ -113,6 +118,7 @@
                             <button type="submit" class="btn btn-danger">Submit</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

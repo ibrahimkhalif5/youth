@@ -19,7 +19,9 @@ Auth::routes();
 
 // Frontend section start
 Route::get('/',[CareerController::class,'home']);
+Route::get('/job-vacancy/{id}',[CareerController::class,'jobview']);
 Route::get('/contact',[CareerController::class,'contact']);
+Route::post('/contact-us',[CareerController::class,'contactus']);
 Route::get('/about_us',[CareerController::class,'about']);
 Route::get('/career-opportunities',[CareerController::class,'career']);
 Route::get('/intern-opportunities',[CareerController::class,'intern']);
@@ -39,7 +41,7 @@ Route::post('/registered-group',[CareerController::class,'storewoman']);
 
 Route::get('/reg',[CareerController::class,'reg']);
 
-
+Route::get('/gallery-view',[CareerController::class,'gallery']);
 
 
 
@@ -51,11 +53,18 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/opportunities', [AdminController::class,'create']);
     Route::post('/opportunities', [AdminController::class,'store']);
     Route::get('/view-opportunities', [AdminController::class,'view']);
+    Route::get('/contact-us', [AdminController::class,'contact']);
+
+
+    Route::get('/gallery', [AdminController::class,'galleryview']);
+    Route::get('/gallery-add', [AdminController::class,'galleryadd']);
+    Route::post('/gallery', [AdminController::class,'gallery']);
 
     Route::get('/add-users', [AdminController::class,'adduser']);
     Route::get('/users', [AdminController::class,'viewuser']);
     Route::post('/users', [AdminController::class,'userstore']);
     Route::get('/profile-view/{id}', [AdminController::class,'profile']);
+    Route::get('/group-view/{id}', [AdminController::class,'groupview']);
     Route::get('/applicant-details/{id}', [AdminController::class,'university']);
    
 

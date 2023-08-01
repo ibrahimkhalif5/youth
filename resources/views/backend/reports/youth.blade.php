@@ -24,14 +24,16 @@
                                         <tr>
 
                                             <th>#</th>
+                                            <th>IMAGE</th>
                                             <th>GROUP NAME</th>
                                             <th>REG_NUMBER</th>
                                             <th>REG_DATE</th>
                                             <th>MEMBERS</th>
-                                            <th>SUBCOUNTY</th>
+
                                             <th>WARD</th>
                                             <th>CONTACT NAME</th>
                                             <th>CONTACT NO</th>
+                                            <th>ACTION</th>
 
 
 
@@ -45,14 +47,18 @@
 
 
                                             <th> {{$loop->index+1}}</th>
+                                            <th> <img src="{{asset('uploads/image_files/'.$row->reg_cert)}}"
+                                                    width="100%" height="100%" alt="image"></th>
                                             <td>{{strtoupper($row->group_name)}}</td>
                                             <td>{{strtoupper($row->reg_number)}}</td>
                                             <td>{{strtoupper($row->reg_date)}}</td>
                                             <td>{{strtoupper($row->total_member)}}</td>
-                                            <td>{{strtoupper($row->subcounty)}}</td>
+
                                             <td>{{strtoupper($row->ward)}}</td>
                                             <td>{{strtoupper($row->contact_person)}}</td>
                                             <td>{{strtoupper($row->contant_no)}}</td>
+                                            <td><a href="/group-view/{{$row->id}}" class="btn btn-success">View</a>
+                                            </td>
 
                                         </tr>
                                         @endforeach

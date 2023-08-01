@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Login Page</title>
+    <title>Admin|Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
@@ -18,7 +18,7 @@
     }
 
     .card-login {
-        margin-top: 130px;
+        margin-top: 60px;
         padding: 18px;
         max-width: 30rem;
     }
@@ -103,7 +103,7 @@
     <div class="container">
         <div class="card card-login mx-auto text-center bg-dark">
             <div class="card-header mx-auto bg-dark">
-                <span> <img src="front/images/mdr1.png" class="w-75" alt="Logo"> </span><br />
+                <span> <img src="{{asset('front/images/mdr1.png')}}" class="w-75" alt="Logo"> </span><br />
                 <span class="logo_title mt-5">Ministry of Social Development</span>
                 <!--            <h1>--><?php //echo $message?>
                 <!--</h1>-->

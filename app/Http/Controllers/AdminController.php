@@ -6,9 +6,12 @@ use App\Models\Job;
 
 use App\Models\User;
 use App\Models\Career;
+use App\Models\Gallery;
+use App\Models\Message;
 use App\Models\University;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 
 class AdminController extends Controller
@@ -52,10 +55,15 @@ class AdminController extends Controller
             $job = new Career();
             $job->title = $request->input('title');
             $job->description = $request->input('description');
-            $job->duration = $request->input('duration');
             $job->vacancy = $request->input('vacancy');
-            $job->venue = $request->input('venue');
-            $job->status = $request->input('status');
+            
+            if ($request->hasfile('image')) {
+                $avatar = $request->file('image');
+                $filename = time().'.'.$avatar->getClientOriginalExtension();
+                Image::make($avatar)->save(public_path('uploads/image_files/'.$filename));
+                $avatar->move('public/uploads/image_files/', $filename);
+                $job->image = $filename;
+            }
     
             $job->save();
 
@@ -68,6 +76,14 @@ class AdminController extends Controller
             // dd($property);
     
             return view('backend.career.profile')->with('Job', $job);
+        }
+
+        public function groupview(Request $request,$id)
+        {
+            $register = Registration::findOrFail($id);
+            // dd($property);
+    
+            return view('backend.career.group')->with('Registration', $register);
         }
 
         public function university(Request $request,$id)
@@ -166,6 +182,43 @@ class AdminController extends Controller
             $uni = University::get();
             
             return view('backend.reports.university', compact('uni'));
+        }
+
+
+        public function contact(){
+            $msg = Message::where('status',0)->get();
+            
+            return view('backend.messages', compact('msg'));
+        }
+
+        public function galleryadd(){
+            $gal = Gallery::get();
+            
+            return view('backend.gallery.create', compact('gal'));
+        }
+        public function galleryview(){
+            $gal = Gallery::get();
+            
+            return view('backend.gallery.index', compact('gal'));
+        }
+        public function gallery(Request $request) {
+   
+
+            $gal = new Gallery();
+           
+            $gal->title = $request->input('title');
+            $gal->description = $request->input('description');
+            if ($request->hasfile('image')) {
+                $avatar = $request->file('image');
+                $filename = time().'.'.$avatar->getClientOriginalExtension();
+                Image::make($avatar)->save(public_path('uploads/image_files/'.$filename));
+                $avatar->move('public/uploads/image_files/', $filename);
+                $gal->image = $filename;
+            }
+            $gal->save();
+            $request->session()->flash('success', 'Data submitted successfully.');
+        
+        return redirect('/gallery');
         }
 
 }

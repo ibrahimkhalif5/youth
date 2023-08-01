@@ -18,37 +18,39 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <label>Opportunity Title</label>
-                                    <input type="text" class="form-control" name="title">
+
+                                    <input type="text" class="form-control" name="title" id="title"
+                                        placeholder="Enter job Title">
                                 </div>
                                 <div class="form-group">
-                                    <label>Description</label>
-                                    <textarea class="form-control" name="description"></textarea>
+
+                                    <input type="text" class="form-control" name="vacancy"
+                                        placeholder="Enter Vacancy Number">
                                 </div>
+
                                 <div class="form-group">
-                                    <label>Vaccancy Number</label>
-                                    <input type="text" class="form-control" name="vacancy">
+
+                                    <textarea class="form-control" name="description" id="description"
+                                        placeholder="Enter Job Description"></textarea>
                                 </div>
+
                                 <div class="form-group">
-                                    <label>Duration</label>
-                                    <input type="text" class="form-control" name="duration">
-                                </div>
-                                <div class="form-group">
-                                    <label>Venue</label>
-                                    <input type="text" class="form-control" name="venue">
+                                    <label>image</label>
+                                    <input type="file" class="form-control" name="image" id="image">
                                 </div>
 
 
-                                <div class="form-group">
-                                    <label>Status</label>
+                                <!-- <div class="form-group">
+
                                     <select class="form-control" name="status">
-                                        <option>Active</option>
-                                        <option>Off</option>
+                                        <option>status</option>
+                                        <option>open</option>
+                                        <option>closed</option>
 
                                     </select>
-                                </div>
+                                </div> -->
                                 <div class="card-footer text-right">
-                                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                    <button class="btn btn-success btn-block" type="submit">Submit</button>
 
                                 </div>
                             </form>

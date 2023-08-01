@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('fullname')->nullable();
             $table->integer('idno')->nullable()->unique();
-            $table->string('email')->nullable()->unique();
+            $table->string('email')->nullable();
             $table->string('passport')->default('no');
             $table->string('passport_no')->nullable();
             $table->string('image')->nullable();
+            $table->string('gender')->nullable();
             $table->string('passport_date')->nullable();
             $table->string('pwd')->default('no');
             $table->string('subcounty')->nullable();
@@ -26,7 +27,8 @@ return new class extends Migration
             $table->string('school')->nullable();
             $table->string('grade')->nullable();
             $table->string('kcse_date')->nullable();
-            $table->integer('mobile')->nullable();
+            $table->string('birth_date')->nullable();
+            $table->string('mobile')->nullable();
             $table->string('course1')->nullable();
             $table->string('course2')->nullable();
             $table->string('course3')->nullable();

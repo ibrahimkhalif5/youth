@@ -4,87 +4,191 @@
     <section class="section">
 
         <div class="section-body">
+
             <div class="invoice" id="invoice-content">
 
+                <h5><img src="{{asset('front/images/ban.jpeg')}}" width="100%" height="100%" alt="image">
+                </h5>
+
+                <div class="hr-container">
+                    <hr class="hr-red">
+                    <hr class="hr-green">
+                    <hr class="hr-blue">
+                </div>
+                <br>
+
+                <h5 class="" style="text-align: center;font-size: 20px"><u>JOB PLACEMENT
+                        PROGRAM</u></h5>
+                <style>
+                .hr-container {
+                    margin: 0;
+                }
+
+                .hr-container hr {
+                    margin: 0;
+                    padding: 2px;
+                    border: none;
+                    height: 2px;
+                }
+
+                .hr-red {
+                    background-color: maroon;
+                }
+
+                .hr-green {
+                    background-color: grey;
+                }
+
+                .hr-blue {
+                    background-color: green;
+                }
+                </style>
+                <br>
                 <div class="invoice-print">
                     <div class="row">
                         <div class="col-lg-12">
+                            <!-- <div class="invoice-title" style="text-align: center;">
+                                <h2><img src="{{asset('uploads/image_files/'.$Job->image)}}" width="100px"
+                                        height="100px" alt="image"></h2>
 
-                            <div class="invoice-title">
+                            </div> -->
 
-                                <h2><img src="{{asset('uploads/image_files/'.$Job->image)}}" width="70px" heaight="70px"
-                                        alt="image"></h2>
-
-                            </div>
-
-                            <p>Name:{{$Job->fullname}}</p>
-                            <hr>
                             <div class="row">
                                 <div class="col-md-6">
                                     <address>
-                                        <strong>Contact Details:</strong><br>
-                                        Mobile Number:{{$Job->mobile}}<br>
-                                        Emergency contact:07233445<br>
-                                        Email:<br>
-                                        Emergency person:
+                                        <label for=""><strong><b><u>APPLICANT DETAILS:</u></b></strong></label><br>
+                                        @php
+                                        $nameParts = explode(' ', $Job->fullname);
+                                        $formattedName = implode(' ', $nameParts);
+                                        @endphp
+
+                                        <label for="" style=" width: 100px;font-size: 10px;">FULL
+                                            NAME</label><b>{{ strtoupper($formattedName) }}</b>
+                                        <br>
+                                        <label for="" style=" width: 100px;font-size: 10px;">ID NUMBER:</label>
+                                        <b>{{ strtoupper($Job->idno) }}</b><br>
+
+                                        <label for="" style=" width: 100px;font-size: 10px;">PHONE
+                                            NUMBER</label><b>{{ strtoupper($Job->mobile) }}</b>
+                                        <br>
+                                        <label for="" style=" width: 100px;font-size: 10px;">EMAIL ADDRESS:</label>
+                                        <b>{{ strtoupper($Job->email) }}</b><br>
+
+                                        <label for="" style=" width: 100px;font-size: 10px;">SUBCOUNTY:</label>
+                                        <b>{{ strtoupper($Job->subcounty) }}</b><br>
+
+                                        <label for="" style="width: 100px;font-size: 10px;">WARD:</label>
+                                        <b>{{ strtoupper($Job->ward) }}</b><br>
+                                        <label for="" style=" width: 100px;font-size: 10px;">DATE OF BIRTH:</label>
+                                        <b>{{ strtoupper($Job->birth_date) }}</b><br>
+
+
+                                        @if ($Job->passport === 'yes')
+                                        <label for="" style=" width: 100px;font-size: 10px;">PASSPORT
+                                            NO:</label>
+                                        <b><i>{{ strtoupper($Job->passport_no) }}</b>
+                                        <br>
+
+                                        <label for="" style=" width: 100px;font-size: 10px;">EXPIRY
+                                            DATE:</label>
+                                        <b><i>{{ strtoupper($Job->passport_date) }}</b><br>
+                                        @else
+                                        <!-- Display something else, like 'N/A' if the passport is not 'yes' -->
+
+                                        @endif
+                                        <label for="" style=" width: 100px;font-size: 10px;">PARENT NAME:</label>
+                                        <b>{{ strtoupper($Job->parent_name) }}<br>
+                                            <label for="" style=" width: 100px;font-size: 10px;">PARENT
+                                                NUMBER:</label>
+                                            <b>{{ strtoupper($Job->parent_no) }}<br>
                                     </address>
                                 </div>
 
+                                <h2 style="float: right;">
+                                    <img src="{{asset('uploads/image_files/'.$Job->id_copy)}}" width="100%"
+                                        height="100%" alt="image">
+                                </h2>
+
+
+
+
                             </div>
+
 
                         </div>
                     </div>
+                    <div class="hr-container">
+
+                        <hr class="hr-green">
+
+                    </div>
                     <div class="row mt-4">
                         <div class="col-md-12">
-                            <div class="section-title">Education Summary</div>
-                            <p class="section-lead">All items here cannot be deleted.</p>
+                            <div class="section-title" style="font-size: 15px;"><u>EDUCATION SUMMARY</u></div>
+
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover table-md">
                                     <tr>
-                                        <th data-width="40">#</th>
-                                        <th class="text-center">Education Level</th>
-                                        <th class="text-center">Course</th>
-                                        <th class="text-center">Grade</th>
-                                        <th class="text-right">passport</th>
+                                        <th class="text-center">#</th>
+                                        <th class="text-center">PHOTO</th>
+                                        <th class="text-center">EDUCATION LEVEL</th>
+                                        <th class="text-center">COURSE</th>
+                                        <th class="text-center">GRADE</th>
+                                        <th class="text-right">PASSPORT</th>
+
                                     </tr>
 
                                     <tr>
-                                        <td class="text-center"> {{$Job->index+1}}</td>
-                                        <td class="text-center">{{$Job->education}}</td>
-                                        <td class="text-center">{{$Job->qualification}}</td>
-                                        <td class="text-center">{{$Job->grade}}</td>
-                                        <td class="text-center">{{$Job->passport}}</td>
+                                        <td class="text-center">{{$Job->index+1}}</td>
+                                        <td class="text-center">
+                                            <img src="{{asset('uploads/image_files/'.$Job->image)}}" width="50px"
+                                                height="50px" alt="image">
+                                        </td>
+                                        <td class="text-center">{{strtoupper($Job->education)}}</td>
+                                        <td class="text-center">{{strtoupper($Job->qualification)}}</td>
+                                        <td class="text-center">{{strtoupper($Job->grade)}}</td>
+                                        <td class="text-center">{{strtoupper($Job->passport)}}</td>
+
 
                                     </tr>
-
-
                                 </table>
                             </div>
+
                             <div class="row mt-4">
                                 <div class="col-lg-8">
-                                    <div class="section-title">Work Experience</div>
+                                    <div class="section-title" style="font-size: 15px;"><u>WORK EXPERIENCE</u></div>
+
+
+                                    <label for="" style=" width: 100px;font-size: 10px;">EMPLOYER NAME:</label>
+                                    <b>{{ strtoupper($Job->employer) }}</b><br>
+
+                                    <label for="" style=" width: 120px;font-size: 10px;">YERAS OF
+                                        EXPERIENCE:</label>
+                                    <b>{{ strtoupper($Job->exp_year) }} YEARS</b><br>
+                                    <label for="" style=" width: 100px;font-size: 10px;">POSITION HELD:</label>
+                                    <b>{{ strtoupper($Job->position) }}</b><br>
+
+
+
+
+
+                                    <div class="section-title" style="font-size: 15px;"><U>DUTIES &
+                                            RESPONSIBILIES</U>
+                                    </div>
                                     <ul>
+
+                                        @php
+                                        $workExperiences = explode("\n", $Job->work);
+                                        @endphp
+
+                                        @foreach ($workExperiences as $experience)
                                         <li>
-                                            <p class="section-lead">Employer{{$Job->employer}}</p>
+
+                                            <p>{{strtoupper( $experience) }}</p>
                                         </li>
+                                        @endforeach
                                     </ul>
-                                    <ul>
-                                        <li>
-                                            <p class="section-lead">Years of experience{{$Job->exp_year}}</p>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <p class="section-lead">Position Held{{$Job->position}}</p>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <p class="section-lead">Duties & Responsibility,
-                                            <ol>{{$Job->work}}</ol>
-                                            </p>
-                                        </li>
-                                    </ul>
+
 
 
                                 </div>
@@ -93,15 +197,18 @@
                         </div>
                     </div>
                 </div>
-                <hr>
-                <div class="text-md-right" id="buttons-section">
-                    <div class="float-lg-left mb-lg-0 mb-3">
-                        <button class="btn btn-primary btn-icon icon-left btn-download-cv"><i
-                                class="fas fa-credit-card"></i> Download CV</button>
-                        <button class="btn btn-danger btn-icon icon-left"><i class="fas fa-times"></i> Cancel</button>
-                    </div>
-                </div>
 
+
+                <hr>
+
+
+            </div>
+        </div>
+        <div class="text-md-right" id="buttons-section">
+            <div class="float-lg-left mb-lg-0 mb-3">
+                <button class="btn btn-primary btn-icon icon-left btn-download-cv"><i class="fas fa-credit-card"></i>
+                    Download CV</button>
+                <button class="btn btn-danger btn-icon icon-left"><i class="fas fa-times"></i> Cancel</button>
             </div>
         </div>
     </section>

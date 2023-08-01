@@ -52,7 +52,26 @@
                                             <td>{{strtoupper($row->pwd)}}</td>
                                             <td>{{strtoupper($row->education)}}</td>
                                             <td>{{strtoupper($row->qualification)}}</td>
-                                            <td>{{strtoupper($row->age)}}</td>
+                                            <td><?php
+// Given birth date from the HTML code
+$htmlBirthDate = "<td>{{strtoupper($row->birth_date)}}</td>";
+
+// Step 1: Extract the birth date from the HTML code
+preg_match('/<td>{{strtoupper\((.*?)\)}}<\/td>/', $htmlBirthDate, $matches);
+$birthDateStr = $matches[1];
+
+// Step 2: Parse the birth date from the extracted string (assuming the format is 'YYYY-MM-DD')
+$birthDateObj = DateTime::createFromFormat('Y-m-d', $birthDateStr);
+
+// Step 3: Get the current date
+$currentDateObj = new DateTime();
+
+// Step 4: Calculate the difference between the current date and the birth date to determine the age
+$age = $currentDateObj->diff($birthDateObj)->y;
+
+echo  $age . " years";
+?>
+                                            </td>
                                             <td>{{strtoupper($row->mobile)}}</td>
                                             <td><a href="/profile-view/{{$row->id}}" class="btn btn-success">View</a>
                                             </td>

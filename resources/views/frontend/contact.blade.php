@@ -15,7 +15,11 @@
             </div>
         </div>
     </div>
-
+    @if(session('success'))
+    <div class="alert alert-success">
+        <span>&#10004;</span> {{ session('success') }}
+    </div>
+    @endif
 
     <div id="contact_wrap" class="contact_wrap">
         <div class="container">
@@ -36,14 +40,14 @@
                             <div class="icon_box"><i class="fa fa-envelope"></i></div>
                             <div class="info_txt">
                                 <h4>Email</h4>
-                                <p><a href="mailto:abcxyz@abc.com">youthaffairs@mandera.go.ke</a></p>
+                                <p><a href="youthaffairs@mandera.go.ke">youthaffairs@mandera.go.ke</a></p>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="icon_box"><i class="fa fa-envelope"></i></div>
                             <div class="info_txt">
                                 <h4>Email</h4>
-                                <p><a href="mailto:abcxyz@abc.com">genderservices@mandera.go.ke</a></p>
+                                <p><a href="genderservices@mandera.go.ke">genderservices@mandera.go.ke</a></p>
                             </div>
                         </div>
                     </div>
@@ -56,13 +60,15 @@
                 <h3>Send A Message</h3>
                 <p>Your email address will not be published. Required fields are marked.</p>
                 <div class="contact_form">
-                    <form method="post" action="#">
-                        <input class="form-control" placeholder="Your Name..." name="name" type="text">
-                        <input class="form-control" placeholder="Email Addrress..." name="email" type="text">
-                        <textarea class="form-control" rows="7" placeholder="Message..." name="message"></textarea>
-
+                    <form class="" method="POST" action="{{url('contact-us')}}" id="postComment">
+                        @csrf
+                        <input class="form-control" placeholder="Your Name..." name="name" id="name" type="text">
+                        <input class="form-control" placeholder="Email Addrress..." name="email" id="email" type="text">
+                        <textarea class="form-control" rows="7" placeholder="Message..." name="message"
+                            id="message"></textarea>
+                        <button type="text" class="btn btn_contact">Submit <i class="fa fa-check"></i></button>
                     </form>
-                    <button type="text" class="btn btn_contact">Submit <i class="fa fa-check"></i></button>
+
                 </div>
             </div>
 

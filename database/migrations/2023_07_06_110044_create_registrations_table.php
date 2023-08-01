@@ -18,10 +18,11 @@ return new class extends Migration
             $table->string('subcounty')->nullable();
             $table->string('ward')->nullable();
             $table->string('contact_person')->nullable();
-            $table->integer('contant_no')->nullable();
+            $table->string('contant_no')->nullable();
             $table->string('reg_date')->nullable();
-            $table->string('total_member')->nullable();
+            $table->integer('total_member')->nullable();
             $table->string('reg_number')->nullable();
+            $table->string('reg_cert')->nullable();
             $table->string('status')->default('active');
             $table->timestamps();
         });

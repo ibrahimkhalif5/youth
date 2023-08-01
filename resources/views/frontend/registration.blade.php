@@ -56,6 +56,15 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
+
+                                <select id="gender" name="gender" class="form-control">
+                                    <option selected> Gender...</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
                                 <input id="mobile" name="mobile" placeholder="mobile number." class="form-control"
                                     required="required" type="number" pattern="[0-9]{10}">
                                 @error('mobile')
@@ -174,6 +183,7 @@
                             <div class="form-group col-md-6">
                                 <input id="employer" name="employer" placeholder="employer name.." class="form-control"
                                     type="text" required="required">
+
                             </div>
                             <div class="form-group col-md-6">
                                 <input id="job" name="job" placeholder="Position held.." class="form-control"
@@ -185,8 +195,13 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="photo">photo:</label>
+                                <label for="photo">Passport photo:</label>
                                 <input id="image" name="image" class="form-control" type="file"
+                                    accept=".png, .jpeg, .jpg, image/*">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="photo">Id Copy:</label>
+                                <input id="id_copy" name="id_copy" class="form-control" type="file"
                                     accept=".png, .jpeg, .jpg, image/*">
                             </div>
 

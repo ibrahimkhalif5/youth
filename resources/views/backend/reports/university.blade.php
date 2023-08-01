@@ -57,7 +57,7 @@
                                             <td>{{strtoupper($row->ward)}}</td>
                                             <td>{{strtoupper($row->pwd)}}</td>
                                             <td>{{strtoupper($row->school)}}</td>
-                                            <td>{{strtoupper($row->course)}}</td>
+                                            <td>{{strtoupper($row->course1)}}</td>
                                             <td>{{strtoupper($row->kcse_date)}}</td>
                                             <td>{{strtoupper($row->grade)}}</td>
                                             <td>{{strtoupper($row->mobile)}}</td>

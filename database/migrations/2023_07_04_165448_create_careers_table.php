@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->integer('vacancy')->nullable();
-            $table->string('venue')->nullable();
-            $table->string('status')->default('active');
-            $table->string('duration')->nullable();
+            
+            $table->string('status')->default('open');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

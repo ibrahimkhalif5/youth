@@ -5899,3 +5899,8 @@ body.offcanvas .offcanvas_overlay {
     font-size: 14px;
     margin-top: 10px;
 }
+.alert-success {
+    background-color: rgb(213, 173, 11);
+    color: rgb(206, 65, 9);
+    /* Add any other custom styles you want for the success message */
+}

@@ -5,18 +5,34 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 
 use App\Models\Career;
+use App\Models\Gallery;
+use App\Models\Message;
 use App\Models\University;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 class CareerController extends Controller
 {
     public function home() {
-    $careers=Career::all();
-    
-    return view('frontend.home',compact("careers"));
 
+        $gal=Gallery::get();
+        $job=Career::get();
+           
+     return view('frontend.home',compact("gal","job"));
+
+
+
+
+    }
+    
+    public function jobview(Request $request,$id)
+    {
+        $job = Career::findOrFail($id);
+        // dd($property);
+
+        return view('frontend.careerview')->with('Job', $job);
     }
 
     public function contact() {
@@ -24,7 +40,12 @@ class CareerController extends Controller
         return view('frontend.contact');
     
         }
-
+        public function gallery() {
+        $gal=Gallery::get();
+           
+            return view('frontend.gallery',compact("gal"));
+        
+            }
         public function about() {
         
             return view('frontend.aboutus');
@@ -107,8 +128,9 @@ class CareerController extends Controller
                             $job->subcounty = $request->input('subcounty');
                             $job->ward = $request->input('ward');
                             $job->idno = $request->input('idno');
+                            $job->gender = $request->input('gender');
                             $job->grade = $request->input('grade');
-
+                           
                             $job->email = $request->input('email');
                             $job->passport = $request->input('passport');
                             $job->passport_date = $request->input('passdate');
@@ -127,8 +149,17 @@ class CareerController extends Controller
                                 $avatar->move('public/uploads/image_files/', $filename);
                                 $job->image = $filename;
                             }
+                            if ($request->hasfile('id_copy')) {
+                                $avatar = $request->file('id_copy');
+                                $filename = time().'.'.$avatar->getClientOriginalExtension();
+                                Image::make($avatar)->resize(300, 300)->save(public_path('uploads/image_files/'.$filename));
+                                $avatar->move('public/uploads/image_files/', $filename);
+                                $job->id_copy = $filename;
+                            }
                             $job->save();
-                            $request->session()->flash('success', 'Data submitted successfully.');
+
+                            
+                            $request->session()->flash('success', 'Job application submitted successfully! Good luck!');
     
             return redirect('/youth-employment')->with('status', 'record added successfully');
         }                
@@ -157,6 +188,14 @@ class CareerController extends Controller
             $register->subcounty = $request->input('subcounty');
             $register->ward = $request->input('ward');
             $register->total_member = $request->input('member');
+            if ($request->hasfile('reg_cert')) {
+                $avatar = $request->file('reg_cert');
+                $filename = time().'.'.$avatar->getClientOriginalExtension();
+                Image::make($avatar)->resize(300, 300)->save(public_path('uploads/image_files/'.$filename));
+                $avatar->move('public/uploads/image_files/', $filename);
+                $register->reg_cert = $filename;
+            }
+
             $register->save();
             $request->session()->flash('success', 'Data submitted successfully.');
 
@@ -175,9 +214,12 @@ public function uni(Request $request) {
     $uni->fullname = $request->input('fullname');
     $uni->idno = $request->input('idno');
     $uni->school = $request->input('school');
+    $uni->birth_date = $request->input('dob');
     $uni->kcse_date = $request->input('kcse');
     $uni->grade = $request->input('grade');
+    $uni->id_copy = $request->input('idcopy');
     $uni->mobile = $request->input('mobile');
+    $uni->gender = $request->input('gender');
     $uni->subcounty = $request->input('subcounty');
     $uni->ward = $request->input('ward');
     $uni->course1 = $request->input('course1');
@@ -198,41 +240,35 @@ public function uni(Request $request) {
         $avatar->move('public/uploads/image_files/', $filename);
         $uni->image = $filename;
     }
-    // if ($request->hasFile('pass_copy') && $request->hasFile('result_slip') && $request->hasFile('id_copy') && $request->hasFile('cert_copy')) {
-    //     $pass_copy = $request->file('pass_copy');
-    //     $result_slip = $request->file('result_slip');
-    //     $id_copy = $request->file('id_copy');
-    //     $cert_copy = $request->file('cert_copy');
-    
-    //     // Generate unique filenames for each PDF
-    //     $passCopyFilename = time() . '_pass.' . $pass_copy->getClientOriginalExtension();
-    //     $resultSlipFilename = time() . '_result.' . $result_slip->getClientOriginalExtension();
-    //     $idCopyFilename = time() . '_id.' . $id_copy->getClientOriginalExtension();
-    //     $certCopyFilename = time() . '_cert.' . $cert_copy->getClientOriginalExtension();
-    
-    //     // Move and save each PDF to the desired location
-    //     $pass_copy->move('public/uploads/pdf_files/', $passCopyFilename);
-    //     $result_slip->move('public/uploads/pdf_files/', $resultSlipFilename);
-    //     $id_copy->move('public/uploads/pdf_files/', $idCopyFilename);
-    //     $cert_copy->move('public/uploads/pdf_files/', $certCopyFilename);
-    
-    //     // Save the filenames into the database
-    //     $uni->pass_copy = $passCopyFilename;
-    //     $uni->result_slip = $resultSlipFilename;
-    //     $uni->id_copy = $idCopyFilename;
-    //     $uni->cert_copy = $certCopyFilename;
-        
-    //     // Save the record to the database
-    //     $uni->save();
-    // }
-    
+    if ($request->hasfile('id_copy')) {
+        $avatar = $request->file('id_copy');
+        $filename = time().'.'.$avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(300, 300)->save(public_path('uploads/image_files/'.$filename));
+        $avatar->move('public/uploads/image_files/', $filename);
+        $uni->id_copy = $filename;
+    }
+   
     $uni->save();
-    $request->session()->flash('success', 'Data submitted successfully.');
+    $request->session()->flash('success', 'Your university application has been successfully submitted. Our team will review your application, and we will get in touch with you soon. Thank you');
 
-return redirect('/university-placement')->with('status', 'record added successfully');
+return redirect('/university-placement');
 }
 
+public function contactus(Request $request) {
    
+
+    $msg = new Message();
+   
+    $msg->name = $request->input('name');
+    $msg->email = $request->input('email');
+    $msg->message = $request->input('message');
+
+    $msg->save();
+    $request->session()->flash('success', 'Message Received. Thank you!');
+
+return redirect('/contact');
+}
+
 
 
     
