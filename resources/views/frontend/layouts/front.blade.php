@@ -49,6 +49,66 @@
 
 <body id="home" class="cms_index2">
 
+    <!-- Your header and navigation code -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal-header-with-background">
+                    <h5 class="modal-title" id="modalLabel"></h5>
+
+                </div>
+                <div class="modal-body">
+
+                    <p>Mandera Empowerment Hub :is a pioneering online platform initiated by the Ministry of Social
+                        Development , with a vision to foster inclusivity, equal opportunities, and prosperity for all.
+                        This
+                        dynamic website is dedicated to capturing vital data and empowering three key groups in the
+                        community: unemployed youth, Persons Living With Disabilities (PWDs), and Women.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                    <a href="/login" class="btn btn-success">Proceed to Application</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .modal-logo {
+        max-width: 200px;
+        /* Adjust the width as needed */
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-dialog {
+        margin: 100px auto;
+        padding: 20px;
+
+    }
+
+    .modal-header-with-background {
+        background-image: url('{{asset('front/images/ban.jpeg')}}');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        /* You may need to adjust text color for visibility */
+    }
+    </style>
+
+
+
+
+
     <header>
 
         <div class="header_top" style="background-color: #8f5444">
@@ -86,16 +146,11 @@
                                     <h5 class="sp_module_title">Navigation page</h5>
                                 </li>
                                 <li><a class="trigger" href="/">Home</a></li>
-                                <!-- <li><a class="trigger" href="/about_us">About</a></li> -->
-                                <li>
-                                    <a href="#">Applications</a>
-                                    <ul class="dl-submenu">
-                                        <li><a href="/university-placement">University Placement Program</a></li>
-                                        <li><a href="/youth-employment">Youth Seeking Employment</a></li>
-                                        <li><a href="/registered-group">Registered Groups</a></li>
 
-                                    </ul>
-                                </li>
+                                <li><a class="trigger" data-toggle="modal" data-target="#myModal"
+                                        href="/applications">Registration-info</a></li>
+
+
                                 <li>
                                     <a href="#">Opportunities</a>
                                     <ul class="dl-submenu">
@@ -109,6 +164,7 @@
                                 <li><a class="trigger" href="/contact">Contact us</a></li>
                                 <li><a class="trigger" href="/gallery-view">Gallery</a></li>
 
+
                             </ul>
                         </div>
 
@@ -116,15 +172,14 @@
                             <ul class="main_menu">
 
                                 <li><a class="trigger" href="/">Home</a></li>
-                                <!-- <li><a class="trigger" href="/about_us">About</a></li> -->
-                                <li><a class="trigger" href="#">Applications <i class="fa fa-angle-down"></i></a>
-                                    <ul class="submenu">
-                                        <li><a href="/university-placement">University Program</a></li>
-                                        <li><a href="/youth-employment">employment program</a></li>
-                                        <li><a href="/registered-group">Registered Groups</a></li>
 
-                                    </ul>
-                                </li>
+                                <li><a class="trigger" data-toggle="modal" data-target="#myModal"
+                                        href="">Registration-info</a></li>
+
+
+
+
+
                                 <li><a class="trigger" href="#">Opportunities <i class="fa fa-angle-down"></i></a>
                                     <ul class="submenu">
                                         <li><a href="/career-opportunities">Jobs </a></li>
@@ -279,7 +334,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+    <!-- Add these lines to ensure proper functioning of the modal -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pzjw1PKFsZy0Ew5tFcfyQoJmP3VfL+5y9rjLzz+wwaQ1MDe0ilWepSsA0r4PWTN7" crossorigin="anonymous">
+    </script>
+    <script src="{{asset('https://code.jquery.com/jquery-3.6.0.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('front/js/jquery-3.1.0.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('front/js/modernizr.custom.js')}}"></script>
     <script type="text/javascript" src="{{asset('front/js/jquery.dlmenu.js')}}"></script>

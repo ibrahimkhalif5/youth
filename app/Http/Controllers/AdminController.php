@@ -12,6 +12,7 @@ use App\Models\University;
 use App\Models\Registration;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use App\Http\Middleware\AdminMiddleware;
 
 
 class AdminController extends Controller
@@ -40,10 +41,7 @@ class AdminController extends Controller
             'kcse' => $kcse
         ]);
     }
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+ 
     public function create(){
         return view('backend.career.create');
     }
@@ -201,6 +199,29 @@ class AdminController extends Controller
             
             return view('backend.gallery.index', compact('gal'));
         }
+
+        public function userview(Request $request,$id)
+        {
+            $user = User::findOrFail($id);
+            // dd($property);
+    
+            return view('backend.users.edit')->with('User', $user);
+        }
+
+        public function usersupdate(Request $request,$id){
+
+            $users = User::find($id);
+            $users->name = $request->input('fullname');
+            $users->email = $request->input('email');
+            $users->role = $request->input('role');
+            
+    
+            $users->save();
+
+        return redirect('/users')->with('status', 'User record updated successfully');
+        }
+
+
         public function gallery(Request $request) {
    
 
@@ -220,5 +241,8 @@ class AdminController extends Controller
         
         return redirect('/gallery');
         }
-
+        public function __construct()
+        {
+            $this->middleware('auth');
+        }
 }

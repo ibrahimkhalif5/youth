@@ -100,6 +100,7 @@
 <body>
 
 
+
     <div class="container">
         <div class="card card-login mx-auto text-center bg-dark">
             <div class="card-header mx-auto bg-dark">
@@ -110,6 +111,11 @@
 
             </div>
             <div class="card-body">
+                @if(session('verification'))
+                <div class="alert alert-warning" role="alert">
+                    You need to verify your email before logging in. Check your email for the verification link.
+                </div>
+                @endif
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input-group form-group">
@@ -145,14 +151,27 @@
                     <div class="form-group">
                         <input type="submit" name="btn" value="Login"
                             class="btn btn-outline-danger float-right login_btn">
+
                     </div>
 
+                    @if (Route::has('password.request'))
+                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                        {{ __('Forgot Your Password?') }}
+                    </a>
+                    @endif
 
                 </form>
+
+                <br>
                 <div class="form-group">
-                    <a href="/"><input type="submit" name="btn" value="back"
-                            class="btn btn-outline-danger float-left login_btn"></a>
-                </div>
+                    <a href="/" class="btn btn-warning btn-block">Back to Website</a>
+
+
+                </div> <a class="btn btn-link" href="{{ route('register') }}">
+                    {{ __('New User? Create account here') }}
+                </a>
+
+
             </div>
         </div>
     </div>

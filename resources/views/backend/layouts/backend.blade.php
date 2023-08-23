@@ -85,6 +85,10 @@
                         <li class="dropdown active">
                             <a href="/admin" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
                         </li>
+
+
+
+                        @can('super_admin')
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="briefcase"></i><span>Users</span></a>
@@ -93,6 +97,7 @@
                                 <li><a class="nav-link" href="/users">Registered Users </a></li>
                             </ul>
                         </li>
+                        @endcan
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="command"></i><span>Opportunities</span></a>
@@ -102,7 +107,7 @@
 
                             </ul>
                         </li>
-
+                        @can('super_admin')
                         <li class="dropdown">
                             <a href="#" class="menu-toggle nav-link has-dropdown"><i
                                     data-feather="briefcase"></i><span>Gallery</span></a>
@@ -111,6 +116,7 @@
                                 <li><a class="nav-link" href="/gallery">View </a></li>
                             </ul>
                         </li>
+                        @endcan
 
                         <li class="dropdown active">
                             <a href="/contact-us" class="nav-link">

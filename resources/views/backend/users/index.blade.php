@@ -19,8 +19,9 @@
                                             <th>#</th>
                                             <th>Full Name</th>
                                             <th>Email</th>
-                                            <th>password</th>
 
+                                            <th>role</th>
+                                            <th>created at</th>
                                             <th>Action</th>
 
                                         </tr>
@@ -33,12 +34,12 @@
                                             <td>{{$row->name}}</td>
 
                                             <td>{{$row->email}}</td>
-
+                                            <td>{{$row->role}}</td>
 
                                             <td>{{$row->created_at}}</td>
                                             <td>
 
-                                                <a href="" class="btn btn-success">Edit</a>
+                                                <a href="/user-role/{{$row->id}}" class="btn btn-success">Edit</a>
 
                                             </td>
 

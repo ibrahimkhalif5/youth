@@ -15,7 +15,7 @@
                             <!-- <div class="text-center mb-4">
                                 <img src="{{ asset('back/assets/img/mdr1.png') }}" alt="Logo" width="200" class="logo">
                             </div> -->
-                            <div class="table-title">Postgraduate</div>
+
                             <div class="table-responsive">
 
                                 <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
