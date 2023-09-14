@@ -17,8 +17,9 @@ class SuperAdminSeeder extends Seeder
         User::create([
             'name' => 'Super Admin',
             'email' => 'superadmin@gmail.com',
-            'password' => Hash::make('superadmin123'), // Replace 'password' with the desired password
-            'role' => 'super_admin', // Add a 'role' column in your users table to store user roles
+            'password' => Hash::make('superadmin123'),
+            'role' => 'super_admin',
+            'email_verified_at' => now(), // Mark the user as verified
         ]);
     }
 }

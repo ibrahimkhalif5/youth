@@ -183,11 +183,11 @@
                     <div class="row find_course_form_inner">
                         <h2>Register Your Details</h2>
                         <button class="btn find_course_form_btn"></button>
-                        <a href="/youth-employment"><button class="btn find_course_form_btn" style="color: ;">
+                        <a href="user/youth-employment"><button class="btn find_course_form_btn" style="color: ;">
                                 youth Seeking Employment</button></a>
-                        <a href="/registered-group"><button class="btn find_course_form_btn">
+                        <a href="user/registered-group"><button class="btn find_course_form_btn">
                                 Group Registration</button></a>
-                        <a href="/university-placement"><button class="btn find_course_form_btn">
+                        <a href="user/university-placement"><button class="btn find_course_form_btn">
                                 University Placement Program</button></a>
                     </div>
                 </div>
