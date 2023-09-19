@@ -5,7 +5,7 @@
 <div class="content_wrapper">
 
     <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3"
-        style="background: url(front/images/slider_inclass.jpg); background-attachment: fixed; background-position: 50% 50%;">
+        style="background: url(front/images/border_bg.png); background-attachment: fixed; background-position: 50% 50%;">
         <div class="breadcrumb_wrap_inner">
             <div class="container">
                 <h1>Our Gallery</h1>

@@ -35,15 +35,14 @@ Route::get('/reg',[CareerController::class,'reg']);
 Route::get('/gallery-view',[CareerController::class,'gallery']);
 
 
-
+Auth::routes(['verify' => true]);
 
 // registered user can acess
  Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user'], function () {
 
     Route::get('/contact',[HomeController::class,'contact']);
-    Route::post('/contact',[CareerController::class,'contactus']);
+    Route::post('/contact',[HomeController::class,'contactus']);
     Route::get('/gallery',[HomeController::class,'gallery']);
-    
     Route::get('/home', [HomeController::class, 'index']);
     Route::get('/youth-employment', [HomeController::class, 'register']);
     Route::post('/job-placement', [HomeController::class, 'store']);
@@ -90,6 +89,3 @@ Route::group(['middleware' => ['auth', 'verified',AdminMiddleware::class]], func
     Route::get('/university-placement-program', [AdminController::class,'uni']);
 });
 // Admin section ends here
-
-
-Auth::routes(['verify' => true]);

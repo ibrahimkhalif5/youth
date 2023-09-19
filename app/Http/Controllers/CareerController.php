@@ -40,7 +40,23 @@ public function contact() {
         return view('frontend.contact');
     
         }
-public function gallery() {
+
+public function contactus(Request $request) {
+
+
+            $msg = new Message();
+            
+            $msg->name = $request->input('name');
+            $msg->email = $request->input('email');
+            $msg->message = $request->input('message');
+        
+            $msg->save();
+            $request->session()->flash('success', 'Message Received. Thank you!');
+        
+        return redirect('/contact');
+        }
+
+        public function gallery() {
     $gal=Gallery::get();
         
         return view('frontend.gallery',compact("gal"));
@@ -55,7 +71,7 @@ public function about() {
 public function career() {
 
         $jobs = Career::where('title', 'NOT LIKE', '%intern%')
-        ->where('title', 'NOT LIKE', '%training%')
+        ->where('title', 'LIKE', '%Jobs%')
         ->get();
 
 

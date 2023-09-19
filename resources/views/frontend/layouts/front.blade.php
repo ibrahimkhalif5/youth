@@ -55,18 +55,25 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header modal-header-with-background">
+                <div class="modal-header modal-header-with-background"> <br>
                     <h5 class="modal-title" id="modalLabel"></h5>
 
                 </div>
                 <div class="modal-body">
+                    <h2>Mandera Empowerment Hub</h2>
+                    <p>Welcome to the Mandera Empowerment Hub, an innovative online platform initiated by the Ministry
+                        of Social Development under the visionary leadership of HE Mohamed Adan Khalif, Governor of
+                        Mandera County. Our mission is clear: to create an inclusive and prosperous future for all
+                        Mandera residents by focusing on three key groups – unemployed youth, Persons Living With
+                        Disabilities (PWDs), and Women. By registering on our platform, you become a vital part of this
+                        ambitious vision.</p>
+                    <h4><b>Your Data, Our Catalyst for Informed Change</b></h4>
+                    <p>The Mandera Empowerment Hub is more than just a website; it's an engine for change. Your
+                        registration empowers us to better understand and serve our community's unique needs, while also
+                        equipping the county with crucial data about the education, skills, and abilities of its
+                        residents. This data enables informed decision-making, shaping policies and opportunities that
+                        truly benefit our diverse community.</p>
 
-                    <p>Mandera Empowerment Hub :is a pioneering online platform initiated by the Ministry of Social
-                        Development , with a vision to foster inclusivity, equal opportunities, and prosperity for all.
-                        This
-                        dynamic website is dedicated to capturing vital data and empowering three key groups in the
-                        community: unemployed youth, Persons Living With Disabilities (PWDs), and Women.
-                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

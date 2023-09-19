@@ -20,7 +20,7 @@
                                 <div class="form-group">
 
                                     <input type="text" class="form-control" name="title" id="title"
-                                        placeholder="Enter job Title">
+                                        placeholder="Enter Title example Training,Jobs or Intern">
                                 </div>
                                 <div class="form-group">
 

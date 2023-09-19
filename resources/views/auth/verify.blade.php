@@ -113,9 +113,13 @@
     <div class="container">
         <div class="card card-login mx-auto text-center bg-dark">
             <div class="card-header mx-auto bg-dark">
-                <h2>Verify Your Email Address</h2>
+                <span> <img src="{{asset('front/images/mdr1.png')}}" class="w-75" alt="Logo"> </span><br />
+                <span class="logo_title mt-5">Verify Your Email Address</span>
+                <!--            <h1>--><?php //echo $message?>
+                <!--</h1>-->
 
             </div>
+
             <div class="card-body">
                 @if (session('resent'))
                 <div class="alert alert-success" role="alert">
@@ -131,10 +135,10 @@
                         class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
                 </form>
                 <!-- Add the success message here -->
-                <div class="alert alert-success mt-3" role="alert">
+                <!-- <div class="alert alert-success mt-3" role="alert">
                     Your email has been successfully verified. You can now<a href="/login">click here to login</a>.
 
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

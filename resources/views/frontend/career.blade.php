@@ -20,8 +20,32 @@
     <div id="courses_wrapper" class="courses_wrapper">
 
         <div class="container">
+            <div class="wrapper_course">
+                @foreach($jobs as $row)
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="course_block">
+                        <div class="img_wrap">
+                            <img alt="Science" src="{{asset('uploads/image_files/' . $row->image) }}">
+                            <div class="course_img_hoverlay_btn"><a href="" title="View More" class="fa fa-eye"></a>
+                            </div>
+                            <h4>{{$row->title}}</h4>
+                        </div>
+                        <div class="science">
+                            <div class="course_info">
+                                <p>{{$row->description}}</p>
+                            </div>
+                        </div>
+                        <div class="science course_count_wrap">
+                            <div class="course_count">
+                                Vacancy: <span>{{$row->vacancy}}</span>
+                            </div>
 
-            <h2>Comming soon..........</h2>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+
+            </div>
 
 
 

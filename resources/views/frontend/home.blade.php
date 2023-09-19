@@ -62,10 +62,10 @@
                                     data-basealign="slide" data-responsive_offset="off"
                                     data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
                                     data-responsive="off" style="z-index: 7; min-width: 410px; max-width: 410px; 
-                            max-width: 60px; white-space: normal;">{{$row->description}}
+                                     max-width: 60px; white-space: normal;">{{$row->description}}
                                 </div>
 
-                                <div class="tp-caption BigBold-Button rev-btn rs-parallaxlevel-0" id="slide-310-layer-7"
+                                <!-- <div class="tp-caption BigBold-Button rev-btn rs-parallaxlevel-0" id="slide-310-layer-7"
                                     data-x="['left','left','left','left']" data-hoffset="['480','480','30','20']"
                                     data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','30','20']"
                                     data-width="none" data-height="none" data-whitespace="nowrap"
@@ -78,8 +78,8 @@
                                     data-actions='[{"event":"click","action":"scrollbelow","offset":"px"}]'
                                     data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                                     style="z-index: 8; white-space: nowrap; 
-                            border-color: rgba(255, 255, 255, 0.5); outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;">
-
+                                     border-color: rgba(255, 255, 255, 0.5); outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;">
+                                    <i class="fa-icon-chevron-left"></i>
                                 </div>
 
                                 <div class="tp-caption BigBold-Button rev-btn rs-parallaxlevel-0"
@@ -95,12 +95,10 @@
                                     data-start="650" data-splitin="none" data-splitout="none"
                                     data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
                                     data-basealign="slide" data-responsive_offset="off" data-responsive="off" style="z-index: 9; 
-                            white-space: nowrap; padding: 15px 20px 15px 20px; border-color: rgba(255, 255, 255, 0.5); outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: 
-                            border-box; -webkit-box-sizing: border-box;"><i class="fa-icon-chevron-right"></i>
-                                </div>
+                                       border-box; -webkit-box-sizing: border-box;"><i
+                                        class="fa-icon-chevron-right"></i>
+                                </div> -->
                             </li>
-
-
                             @endforeach
                         </ul>
                         <div class="tp-static-layers"></div>
@@ -240,7 +238,7 @@
 
 
 <div id="count" class="count" data-stellar-background-ratio="0.8"
-    style="background: url('{{ asset('front/images/count_bg.jpg') }}'); background-attachment: fixed; background-position: 50% 50%;">
+    style="background: url('{{ asset('front/images/border_bg.png') }}'); background-attachment: fixed; background-position: 50% 50%;">
     <div class="container">
         <div class="head_part">
             <h2>OUR SUCCESS RATE</h2>
