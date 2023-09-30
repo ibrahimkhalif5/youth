@@ -357,7 +357,7 @@
     <script>
     document.getElementById('mobile').addEventListener('input', function() {
         var mobile = this.value;
-        var errorElement = document.getElementById('id-number-error');
+        var errorElement = document.getElementById('mobile-number-error');
 
         if (!/^\d{10}$/.test(mobile)) {
             errorElement.textContent = 'Please enter a valid 10-digit  number.';

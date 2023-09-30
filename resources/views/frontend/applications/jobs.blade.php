@@ -74,6 +74,7 @@
                             <div class="form-group col-md-6">
                                 <input id="mobile" name="mobile" placeholder="Mobile number....." class="form-control"
                                     required="required" type="number" pattern="[0-9]{10}">
+                                <div id="mobile-number-error" class="error-message"></div>
                                 @error('mobile')
                                 <div class="error-message">{{ $message }}</div>
                                 @enderror
