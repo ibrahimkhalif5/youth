@@ -162,7 +162,10 @@
     </div>
 
     <div id="overview" class="overview">
-        <div class="overview_img col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+        <div class="overview_img col-lg-6 col-md-6 col-sm-12 col-xs-12"
+            style="background-image: url('{{ asset('front/images/pr.jpg') }}'); background-size: cover; background-position: center center; min-height: 580px;">
+        </div>
+
         <div class="overview_inner col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h2>Our Programs</h2>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 overview_m_padd">

@@ -1127,9 +1127,7 @@ body.cms_index5 {
     min-height: 580px;
     top: 0;
     bottom: 0;
-    background-image: url(../images/logo1.png);
-    background-size: cover;
-    background-position: center center;
+
     position: absolute;
 }
 .overview_img {

@@ -235,10 +235,10 @@ class HomeController extends Controller
             
             // Retrieve jobs, universities, and registrations associated with the current user
             $jobs = Job::where('user_id', $user->id)->get();
-            $universities = University::where('user_id', $user->id)->get();
-            $registrations = Registration::where('user_id', $user->id)->get();
+            // $universities = University::where('user_id', $user->id)->get();
+            // $registrations = Registration::where('user_id', $user->id)->get();
         
-            return view('frontend.profile', compact('jobs', 'universities', 'registrations'));
+            return view('frontend.profile', compact('jobs'));
         }
         public function profileedit(Request $request,$id)
         {
