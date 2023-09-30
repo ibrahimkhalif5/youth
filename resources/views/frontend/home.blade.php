@@ -65,39 +65,7 @@
                                      max-width: 60px; white-space: normal;">{{$row->description}}
                                 </div>
 
-                                <!-- <div class="tp-caption BigBold-Button rev-btn rs-parallaxlevel-0" id="slide-310-layer-7"
-                                    data-x="['left','left','left','left']" data-hoffset="['480','480','30','20']"
-                                    data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','30','20']"
-                                    data-width="none" data-height="none" data-whitespace="nowrap"
-                                    data-transform_idle="o:1;"
-                                    data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                                    data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                                    data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                    data-start="650" data-splitin="none" data-splitout="none"
-                                    data-actions='[{"event":"click","action":"scrollbelow","offset":"px"}]'
-                                    data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-                                    style="z-index: 8; white-space: nowrap; 
-                                     border-color: rgba(255, 255, 255, 0.5); outline: none; box-shadow: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;">
-                                    <i class="fa-icon-chevron-left"></i>
-                                </div>
 
-                                <div class="tp-caption BigBold-Button rev-btn rs-parallaxlevel-0"
-                                    id="slide-310-layer-12" data-x="['left','left','left','left']"
-                                    data-hoffset="['676','676','226','216']"
-                                    data-y="['bottom','bottom','bottom','bottom']" data-voffset="['50','50','30','20']"
-                                    data-width="none" data-height="none" data-whitespace="nowrap"
-                                    data-transform_idle="o:1;"
-                                    data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
-                                    data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);cursor:pointer;"
-                                    data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                                    data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                                    data-start="650" data-splitin="none" data-splitout="none"
-                                    data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
-                                    data-basealign="slide" data-responsive_offset="off" data-responsive="off" style="z-index: 9; 
-                                       border-box; -webkit-box-sizing: border-box;"><i
-                                        class="fa-icon-chevron-right"></i>
-                                </div> -->
                             </li>
                             @endforeach
                         </ul>
@@ -125,7 +93,7 @@
                         </div>
                         <ul class="course_list">
                             <li class="fundamentals">
-                                <div class="icon"><i class="fa fa-anchor"></i></div>
+                                <div class="icon"><i class="fa fa-globe"></i></div>
                                 <div class="course_info">
                                     <h4>Our Mission</h4>
                                     <p>To promote holistic quality social services to foster growth and development
@@ -134,7 +102,7 @@
                                 </div>
                             </li>
                             <li class="even expert">
-                                <div class="icon"><i class="fa fa-user-plus"></i></div>
+                                <div class="icon"><i class="fa fa-eye"></i></div>
                                 <div class="course_info">
                                     <h4>Our Vision</h4>
                                     <p>To improve quality of social services delivery founded on values such as
@@ -145,7 +113,7 @@
                                 </div>
                             </li>
                             <li class="online second_last">
-                                <div class="icon"><i class="fa fa-desktop"></i></div>
+                                <div class="icon"><i class="fa fa-handshake-o"></i></div>
                                 <div class="course_info">
                                     <h4>Core Values</h4>
 
@@ -161,7 +129,7 @@
                                 </div>
                             </li>
                             <li class="even last event ">
-                                <div class="icon"><i class="fa fa-street-view"></i></div>
+                                <div class="icon"><i class="fa fa-gift"></i></div>
                                 <div class="course_info">
                                     <h4>Key Achievements</h4>
 
@@ -193,39 +161,86 @@
         </div>
     </div>
 
+    <div id="overview" class="overview">
+        <div class="overview_img col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+        <div class="overview_inner col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <h2>Our Programs</h2>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 overview_m_padd">
+                <div class="overview_info instructor col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="icon"><i class="fa fa-graduation-cap"></i></div>
+                        <h5>University placement</h5>
+                        <p>Our University Programs target the highest-achieving KCSE students, offering them the chance
+                            to pursue undergraduate and master's degrees in Turkey. We proudly cover 80% of tuition
+                            fees, making quality higher education more accessible. By investing in the academic growth
+                            of our youth, we aim to equip them with the knowledge and skills needed for a bright future.
+                        </p>
 
+                    </div>
+                    <figure><img alt="Professional Instructor" src="{{asset('front/images/uni.jpg')}}"></figure>
+                </div>
+                <div class="overview_info course col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="icon"><i class="fa fa-briefcase"></i></div>
+                        <h5>Jobs placement</h5>
+                        <p> Our Job Placement Programs align with the governor's vision to employ
+                            2000 youth annually. These initiatives encompass both local and international employment
+                            opportunities, aiming to provide meaningful work for young individuals. Whether it's
+                            securing local jobs or exploring opportunities abroad, our programs are designed to empower
+                            youth through gainful employment.
+                        </p>
+
+                    </div>
+                    <figure><img alt="Online Courses" src="{{asset('front/images/jb.jpg')}}"></figure>
+                </div>
+                <div class="overview_info book col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="icon"><i class="fa fa-users"></i></div>
+                        <h5> group Registration</h5>
+                        <p>The Group Registrations initiative focuses on supporting various community groups, including
+                            youth, persons with disabilities (PWDs), and women's groups. By collecting and analyzing
+                            relevant data, Mandera County can provide tailored assistance and resources to these groups.
+                            This program seeks to enhance the well-being and empowerment of these communities, fostering
+                            positive change and development.</p>
+                        <a href="#">See More</a>
+                    </div>
+                    <figure><img alt="Books &amp; Library" src="{{asset('front/images/woman.png')}}"></figure>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="courses" class="courses">
         <div class="container" style="background-color: #eeeee4">
             <div class="head_part">
                 <h2>Available Opportunities</h2>
-                <p>Join our growing global community of over a million Members.</p>
+
             </div>
             <div class="course_wrapper">
                 @foreach($job as $row)
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="background-color: #eeeee4">
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="course_block">
-                        <div class="img_wrap" style="max-width: 100%; max-height: 200px;">
+                        <div class="img_wrap">
                             <img alt="job" src="{{asset('uploads/image_files/' . $row->image) }}"
                                 style="max-width: 100%; max-height: 100%; object-fit: cover;">
                             <div class="course_img_hoverlay_btn">
-                                <a href="#" title="View More" class="fa fa-eye"></a>
+                                <a href="/job-vacancy/{{$row->id}}" title="View More" class="fa fa-eye"></a>
+
                             </div>
+                            <h4>{{$row->title}}</h4>
+
                         </div>
-
                         <div class="science">
-
                             <div class="course_info">
-                                <h4>{{$row->title}}</h4>
                                 <p>{{$row->description}}</p>
-                                <a href="/job-vacancy/{{$row->id}}" class="read-more-btn">Read More</a>
-                                <!-- Add this line -->
                             </div>
                         </div>
                         <div class="science course_count_wrap">
                             <div class="course_count">
-                                Vaccancy: <span>{{$row->vacancy}}</span>
+                                Vacancy: <span>{{$row->vacancy}}</span>
                             </div>
+
 
                         </div>
                     </div>
@@ -235,6 +250,10 @@
         </div>
     </div>
 </div>
+
+
+
+
 
 
 <div id="count" class="count" data-stellar-background-ratio="0.8"

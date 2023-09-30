@@ -22,11 +22,18 @@
         <div class="row">
             @foreach($gal as $row)
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a href="{{asset('uploads/image_files/'.$row->image)}}" class="fancybox" title="{{ $row->title }}">
+                <a href="{{asset('uploads/image_files/'.$row->image)}}" class="fancybox" title="{{ $row->title }}"
+                    data-description="{{ $row->description }}">
                     <!-- Use 'data-caption' attribute to store the caption -->
                     <img src="{{asset('uploads/image_files/'.$row->image)}}" class="zoom img-fluid" alt="">
+                    <span>
+                        <h6><b>{{ strtoupper($row->description) }}</b></h6>
+
+
+                    </span>
                 </a>
             </div>
+
             @endforeach
         </div>
 

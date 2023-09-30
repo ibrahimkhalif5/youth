@@ -45,7 +45,7 @@
                                     Duration: <span>9 Month</span>
                                 </div> -->
                                 <div class="course_price">
-                                    Vacancy: <span>{{$row->vacancy}}</span>
+                                    Department: <span>{{$row->venue}}</span>
                                 </div>
                             </div>
                         </div>
@@ -54,20 +54,7 @@
 
                 </div>
 
-                <div class="clearfix"></div>
 
-                <div class="pager">
-                    <div class="pages">
-                        <ul class="pagination">
-                            <li><a href="#">Prev</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">Next</a></li>
-                        </ul>
-                    </div>
-                </div>
 
             </div>
 

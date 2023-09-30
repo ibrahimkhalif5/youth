@@ -36,6 +36,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('front/css/style.css')}}" />
 
 
+
+
+
     <link
         href='https://fonts.googleapis.com/css?family=Raleway:800,500%7CLato:400,300,400italic,700,700italic,300italic,900italic,900,100,100italic%7CRoboto:400,500,600'
         rel='stylesheet' type='text/css' />
@@ -49,7 +52,7 @@
 
 <body id="home" class="cms_index2">
 
-    <!-- Your header and navigation code -->
+
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -135,10 +138,10 @@
         </div>
 
         <nav>
-            <div class="container" style="background-color: #008000  ;">
+            <div class="container" style="background-color: #008000;">
                 <div id="navbar" class="navbar navbar-default">
                     <div class="navbar-header col-md-2 col-sm-4 col-xs-4">
-                        <a class="navbar-brand trigger" href="/" title="LearnMate"><img alt="Logo"
+                        <a class="navbar-brand trigger" href="/" title="mandera"><img alt="Logo"
                                 src="{{asset('front/images/logo1.png')}}"></a>
                     </div>
 
@@ -149,13 +152,11 @@
                         <div id="dl-menu" class="dl-menuwrapper">
                             <button class="dl-trigger visible-sm visible-xs"><i class="fa fa-bars"></i></button>
                             <ul class="dl-menu">
-                                <li>
-                                    <h5 class="sp_module_title">Navigation page</h5>
-                                </li>
+
                                 <li><a class="trigger" href="/">Home</a></li>
 
                                 <li><a class="trigger" data-toggle="modal" data-target="#myModal"
-                                        href="/applications">Registration-info</a></li>
+                                        href="/applications">About us</a></li>
 
 
                                 <li>
@@ -180,12 +181,8 @@
 
                                 <li><a class="trigger" href="/">Home</a></li>
 
-                                <li><a class="trigger" data-toggle="modal" data-target="#myModal"
-                                        href="">Registration-info</a></li>
-
-
-
-
+                                <li><a class="trigger" data-toggle="modal" data-target="#myModal" href="">About us</a>
+                                </li>
 
                                 <li><a class="trigger" href="#">Opportunities <i class="fa fa-angle-down"></i></a>
                                     <ul class="submenu">
@@ -368,6 +365,18 @@
     <script type="text/javascript" src="{{asset('front/js/js-functions.js')}}"></script>
     <script type="text/javascript" src="{{asset('front/js/flicker.js')}}"></script>
     <script type="text/javascript" src="{{asset('front/js/rev_slider.js')}}"></script>
+
+
+    <script src="{{ asset('back/assets/bundles/datatables/datatables.min.js') }}"></script>
+    <script src="{{ asset('back/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}">
+    </script>
+    <script src="{{ asset('back/assets/bundles/datatables/export-tables/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('back/assets/bundles/datatables/export-tables/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('back/assets/bundles/datatables/export-tables/jszip.min.js') }}"></script>
+    <script src="{{ asset('back/assets/bundles/datatables/export-tables/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('back/assets/bundles/datatables/export-tables/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('back/assets/bundles/datatables/export-tables/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('back/assets/js/page/datatables.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"
         integrity="sha512-2HIM4Yx1LGLz3AOECEB+mAC7B1BYoiUPxYRvEJ7TwmW6eJQg6eHZvq6opvUvqI6IXKl6XN3gUL69z6xwT9g3qA=="

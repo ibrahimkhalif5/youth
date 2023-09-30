@@ -201,33 +201,32 @@
         <div class="container" style="background-color: #eeeee4">
             <div class="head_part">
                 <h2>Available Opportunities</h2>
-                <p>Join our growing global community of over a million Members.</p>
+
             </div>
             <div class="course_wrapper">
                 @foreach($job as $row)
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" style="background-color: #eeeee4">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="course_block">
-                        <div class="img_wrap" style="max-width: 100%; max-height: 200px;">
+                        <div class="img_wrap">
                             <img alt="job" src="{{asset('uploads/image_files/' . $row->image) }}"
                                 style="max-width: 100%; max-height: 100%; object-fit: cover;">
                             <div class="course_img_hoverlay_btn">
-                                <a href="#" title="View More" class="fa fa-eye"></a>
+                                <a href="/job-vacancy/{{$row->id}}" title="View More" class="fa fa-eye"></a>
+
                             </div>
+                            <h4>{{$row->title}}</h4>
+
                         </div>
-
                         <div class="science">
-
                             <div class="course_info">
-                                <h4>{{$row->title}}</h4>
                                 <p>{{$row->description}}</p>
-                                <a href="/job-vacancy/{{$row->id}}" class="read-more-btn">Read More</a>
-                                <!-- Add this line -->
                             </div>
                         </div>
                         <div class="science course_count_wrap">
                             <div class="course_count">
-                                Vaccancy: <span>{{$row->vacancy}}</span>
+                                Vacancy: <span>{{$row->vacancy}}</span>
                             </div>
+
 
                         </div>
                     </div>
@@ -240,7 +239,7 @@
 
 
 <div id="count" class="count" data-stellar-background-ratio="0.8"
-    style="background: url('{{ asset('front/images/count_bg.jpg') }}'); background-attachment: fixed; background-position: 50% 50%;">
+    style="background: url('{{ asset('front/images/border_bg.png') }}'); background-attachment: fixed; background-position: 50% 50%;">
     <div class="container">
         <div class="head_part">
             <h2>OUR SUCCESS RATE</h2>

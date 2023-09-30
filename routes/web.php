@@ -44,12 +44,18 @@ Auth::routes(['verify' => true]);
     Route::post('/contact',[HomeController::class,'contactus']);
     Route::get('/gallery',[HomeController::class,'gallery']);
     Route::get('/home', [HomeController::class, 'index']);
+   
     Route::get('/youth-employment', [HomeController::class, 'register']);
     Route::post('/job-placement', [HomeController::class, 'store']);
     Route::get('/university-placement', [HomeController::class, 'university']);
     Route::post('/university-placement', [HomeController::class, 'uni']);
     Route::get('/registered-group', [HomeController::class, 'womanreg']);
     Route::post('/registered-group', [HomeController::class, 'storewoman']);
+
+    Route::get('/profile',[HomeController::class,'appview']);
+
+    Route::get('/profile-edit/{id}', [HomeController::class,'profileedit']);
+    Route::put('/profile/update/{id}', [HomeController::class,'profileupdate']);
 });
 
 
@@ -59,6 +65,8 @@ Route::group(['middleware' => ['auth', 'verified',AdminMiddleware::class]], func
     Route::get('/opportunities', [AdminController::class,'create']);
     Route::post('/opportunities', [AdminController::class,'store']);
     Route::get('/view-opportunities', [AdminController::class,'view']);
+    Route::get('/career/edit/{id}', [AdminController::class,'jobedit']);
+    Route::put('/career/update/{id}', [AdminController::class,'jobupdate']);
     Route::get('/contact-us', [AdminController::class,'contact']);
 
     

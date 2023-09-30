@@ -13,10 +13,10 @@
     <div class="content_wrapper">
 
         <div class="breadcrumb_wrap" data-stellar-background-ratio="0.3"
-            style="background: url('{{ asset('front/images/slider_group_in_campus.jpg') }}'); background-attachment: fixed; background-position: 50% 50%;">
+            style="background: url('{{ asset('front/images/banner.png') }}'); background-attachment: fixed; background-position: 50% 50%;">
             <div class="breadcrumb_wrap_inner">
                 <div class="container">
-                    <h1>View Job Detail</h1>
+                    <h1>View opportunity Details</h1>
                     <ul class="breadcrumbs">
                         <li><a href="/">Home</a> /</li>
                         <li>job</li>
@@ -71,6 +71,10 @@
                                     class="hookup_duration">{{$Job->created_at}}</span></li>
                             <li><span class="hookup_tag"><i class="fa fa-clock-o"></i> Status</span><span
                                     class="hookup_duration">{{$Job->status}}</span></li>
+                            <li><span class="hookup_tag"><i class="fa fa-clock-o"></i> Venue</span><span
+                                    class="hookup_duration">{{$Job->venue}}</span></li>
+                            <li><span class="hookup_tag"><i class="fa fa-clock-o"></i> vacancy</span><span
+                                    class="hookup_duration">{{$Job->vacancy}}</span></li>
 
                         </ul>
                     </div>

@@ -9,7 +9,7 @@
             <div class="container">
                 <h1>Upcoming Trainings</h1>
                 <ul class="breadcrumbs">
-                    <li><a href="index.html">Home</a> /</li>
+                    <li><a href="/">Home</a> /</li>
                     <li>Training</li>
                 </ul>
             </div>
@@ -42,7 +42,7 @@
                             </div>
                             <div class="science course_count_wrap">
                                 <div class="course_count">
-                                    Duration: <span>{{$row->duration}}</span>
+                                    Status: <span>{{$row->status}}</span>
                                 </div>
                                 <div class="course_price">
                                     Venue: <span>{{$row->venue}}</span>
@@ -54,20 +54,7 @@
 
                 </div>
 
-                <div class="clearfix"></div>
 
-                <div class="pager">
-                    <div class="pages">
-                        <ul class="pagination">
-                            <li><a href="#">Prev</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">Next</a></li>
-                        </ul>
-                    </div>
-                </div>
 
             </div>
 

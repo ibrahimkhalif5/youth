@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-8 py-5 border">
-                    <h4 class="pb-4 " style="color:red;"><b><i>Enter Your Details </i></b>
+                    <h4 class="pb-4 " style="color:red;"><b><i>Kindly Enter Your Group Details Correctly </i></b>
                     </h4>
                     <form class="" method="POST" action="{{url('user/registered-group')}}" id="postComment"
                         enctype="multipart/form-data">
@@ -57,15 +57,23 @@
                                     type="text" required="required">
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="contact" name="contact" placeholder="contact person.." class="form-control"
-                                    type="text" required="required">
+                                <input id="contact" name="contact" placeholder="Contact person.." class="form-control"
+                                    type="text" required="required"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter contact person i.e chairperson
+                                                *</i></b>
+                                    </h4>
+                                </small>
                             </div>
 
 
 
                             <div class="form-group col-md-6">
-                                <input id="contno" name="contno" placeholder="contact number." class="form-control"
-                                    required="required" type="number" pattern="[0-9]{10}">
+                                <input id="contno" name="contno" placeholder="Contact number." class="form-control"
+                                    required="required" type="number" pattern="[0-9]{10}"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter contact number
+                                                *</i></b>
+                                    </h4>
+                                </small>
                                 @error('contno')
                                 <div class="error-message">{{ $message }}</div>
                                 @enderror
@@ -75,21 +83,30 @@
                             <div class="form-group col-md-6">
                                 <lebel class="pb-4">Registration Date</lebel>
                                 <input id="regdate" name="regdate" class="form-control" type="date">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input id="regno" name="regno" placeholder="Registration number...."
+                                    class="form-control" type="text" required="required"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Group Registration number
+                                                *</i></b>
+                                    </h4>
+                                </small>
 
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="regno" name="regno" placeholder="registration number.." class="form-control"
-                                    type="text" required="required">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <input id="member" name="member" placeholder="total members.." class="form-control"
-                                    type="number" required="required">
+                                <input id="member" name="member" placeholder="Total members..." class="form-control"
+                                    type="number" required="required"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter total number of members in your
+                                                group
+                                                *</i></b>
+                                    </h4>
+                                </small>
                             </div>
 
                             <div class="form-group col-md-6">
 
                                 <select id="subcounty" class="form-control" name="subcounty" onchange="populateWards()">
-                                    <option selected>subcounty ...</option>
+                                    <option selected>Select subcounty ...</option>
                                     <option value="mandera">Mandera East</option>
                                     <option value="rhamu">Rhamu</option>
                                     <option value="elwak">Elwak</option>
@@ -101,14 +118,18 @@
                             <div class="form-group col-md-6">
 
                                 <select id="ward" name="ward" class="form-control">
-                                    <option selected>ward ...</option>
+                                    <option selected>Select Ward ...</option>
 
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
                                 <lebel class="pb-4">Registration certificate</lebel>
                                 <input id="reg_cert" name="reg_cert" class="form-control" type="file"
-                                    accept=".png, .jpeg, .jpg, image/*">
+                                    accept=".png, .jpeg, .jpg, image/*"> <small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Upload Certificate Copy(Image only)
+                                                *</i></b>
+                                    </h4>
+                                </small>
                             </div>
 
                         </div>

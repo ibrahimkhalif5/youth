@@ -7,15 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <!--[if IE]>
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <![endif]-->
 
-
-    <!--[if lt IE 9]>
-        <script type="text/javascript" src="js/html5shiv.min.js"></script>
-        <script type="text/javascript" src="js/respond.min.js"></script>
-	<![endif]-->
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <title>Mandera Youth Centre</title>
@@ -71,7 +63,7 @@
             <div class="container" style="background-color: #008000  ;">
                 <div id="navbar" class="navbar navbar-default">
                     <div class="navbar-header col-md-2 col-sm-4 col-xs-4">
-                        <a class="navbar-brand trigger" href="/" title="LearnMate"><img alt="Logo"
+                        <a class="navbar-brand trigger" href="/" title="mandera"><img alt="Logo"
                                 src="{{asset('front/images/logo1.png')}}"></a>
                     </div>
 
@@ -99,6 +91,8 @@
 
 
                                 <li><a class="trigger" href="/user/contact">Contact us</a></li>
+                                <li><a class="trigger" href="/user/profile">my profile</a></li>
+
                                 <li>
                                     <a href="#">{{ Auth::user()->name }}</a>
                                     <ul class="dl-submenu">
@@ -121,19 +115,20 @@
                             <ul class="main_menu">
 
                                 <li><a class="trigger" href="/user/home">Home</a></li>
+
                                 <!-- <li><a class="trigger" href="/about_us">About</a></li> -->
                                 <li><a class="trigger" href="#">Applications <i class="fa fa-angle-down"></i></a>
                                     <ul class="submenu">
                                         <li><a href="/user/university-placement">University Program</a></li>
-                                        <li><a href="/user/youth-employment">employment program</a></li>
+                                        <li><a href="/user/youth-employment">Employment program</a></li>
                                         <li><a href="/user/registered-group">Registered Groups</a></li>
 
                                     </ul>
                                 </li>
 
+                                <li><a class="trigger" href="/user/profile">My profile</a></li>
 
-
-                                <li><a class="trigger" href="/user/contact">Contact us</a></li>
+                                <li><a class="trigger" href="contact">Contact</a></li>
                                 <li><a class="trigger" href="#">{{ Auth::user()->name }} <i
                                             class="fa fa-angle-down"></i></a>
                                     <ul class="submenu">
@@ -150,6 +145,7 @@
 
                                     </ul>
                                 </li>
+
                             </ul>
                         </div>
                     </div>
@@ -432,6 +428,25 @@
     </script>
 
     <!-- toast -->
+    <script>
+    const experienceSelect = document.getElementById('experience');
+    const toggleFields = document.querySelectorAll('.toggle-fields');
+
+    experienceSelect.addEventListener('change', function() {
+        const selectedValue = this.value;
+        if (selectedValue === '0') {
+            // Hide the fields when 'None' is selected
+            toggleFields.forEach(field => {
+                field.style.display = 'none';
+            });
+        } else {
+            // Show the fields for other options
+            toggleFields.forEach(field => {
+                field.style.display = 'block';
+            });
+        }
+    });
+    </script>
 
 
 </body>

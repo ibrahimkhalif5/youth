@@ -35,6 +35,9 @@ public function home() {
         return view('frontend.careerview')->with('Job', $job);
     }
 
+
+    
+
 public function contact() {
         
         return view('frontend.contact');
@@ -70,9 +73,7 @@ public function about() {
 
 public function career() {
 
-        $jobs = Career::where('title', 'NOT LIKE', '%intern%')
-        ->where('title', 'LIKE', '%Jobs%')
-        ->get();
+        $jobs = Career::where('type', 'jobs')->where('status','open') ->get();
 
 
         return view('frontend.career', compact('jobs'));
@@ -82,9 +83,7 @@ public function career() {
 
 public function intern() {
 
-        $jobs = Career::where('title', 'LIKE', '%intern%')
-        ->orwhere('title', 'LIKE', '%workshop%')
-        ->get();
+    $jobs = Career::where('type', 'intern')->where('status','open') ->get();
 
 
         return view('frontend.intern', compact('jobs'));
@@ -94,9 +93,7 @@ public function intern() {
 
 public function training() {
 
-    $jobs = Career::where('title', 'LIKE', '%training%')
-    ->orwhere('title', 'LIKE', '%trainings%')
-    ->get();
+    $jobs = Career::where('type', 'training')->where('status','open') ->get();
 
 
     return view('frontend.training', compact('jobs'));

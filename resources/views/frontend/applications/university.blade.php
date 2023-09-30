@@ -38,8 +38,8 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-md-8 py-5 border">
-                    <h4 class="pb-4 " style="color:red;"><b><i>Enter Your Details as it appear on your
+                <div class="col-md-8 py-5 " style="border: 2px solid #8f5444;">
+                    <h4 class="pb-4 " style="color:red;"><b><i>Enter Your Details as it appears on your
                                 Certificates</i></b>
                     </h4>
                     <form class="" method="POST" action="{{url('user/university-placement')}}" id="postComment"
@@ -47,12 +47,12 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input id="fullname" name="fullname" placeholder="Applicant Name" class="form-control"
-                                    type="text" required="required">
+                                <input id="fullname" name="fullname" value="{{ Auth::user()->name }}"
+                                    class="form-control" type="text" required="required" readonly>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                                    onblur="validateEmail()">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    value="{{ Auth::user()->email }}" onblur="validateEmail()" readonly>
                                 <span id="emailError" style="color: red; display: none;">Invalid email address</span>
                             </div>
 
@@ -68,14 +68,14 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="mobile" name="mobile" placeholder="mobile number." class="form-control"
+                                <input id="mobile" name="mobile" placeholder="Mobile number...." class="form-control"
                                     required="required" type="number" pattern="[0-9]{10}">
                                 @error('mobile')
                                 <div class="error-message">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="idno" name="idno" placeholder="Id number." class="form-control"
+                                <input id="idno" name="idno" placeholder="Id number...." class="form-control"
                                     required="required" type="number" pattern="[0-9]{8}">
                                 <div id="id-number-error" class="error-message"></div>
                                 @error('idno')
@@ -83,37 +83,54 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="school" name="school" placeholder="school Name" class="form-control"
-                                    type="text" required="required">
+                                <input id="school" name="school" placeholder="School Name...." class="form-control"
+                                    type="text" required="required"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Your Secondary School Name i.e MSS*
+                                            </i></b>
+                                    </h4>
+                                </small>
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="kcse" name="kcse" placeholder="year completed." class="form-control"
-                                    required="required" type="number">
+                                <input id="kcse" name="kcse" placeholder="Year completed...." class="form-control"
+                                    required="required" type="number"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Year completed i.e 2022*
+                                            </i></b>
+                                    </h4>
+                                </small>
                             </div>
                             <div class="form-group col-md-6">
-                                <lebel class="pb-4">Birth Date</lebel>
+                                <lebel class="pb-4">Birth Date....</lebel>
                                 <input id="dob" name="dob" class="form-control" type="date">
 
                             </div>
                             <div class="form-group col-md-6">
 
                                 <select id="grade" name="grade" class="form-control">
-                                    <option selected>your grade ...</option>
+                                    <option selected>Your grade ....</option>
                                     <option value="A PLAIN"> A PLAIN</option>
                                     <option value="A MINUS"> A MINUS</option>
                                     <option value="B PLUS"> B PLUS</option>
                                     <option value="B PLAIN"> B PLAIN</option>
                                     <option value="B MINUS"> B MINUS</option>
                                     <option value="C PLUS"> C PLUS</option>
+
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="emergency" name="emergency" placeholder="parent name.." class="form-control"
-                                    type="text" required="required">
+                                <input id="emergency" name="emergency" placeholder="Parent name...."
+                                    class="form-control" type="text" required="required"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter your parent Name Mother/Father*
+                                            </i></b>
+                                    </h4>
+                                </small>
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="emobile" name="emobile" placeholder="parent number..." class="form-control"
-                                    required="required" type="number" pattern="[0-9]{10}">
+                                <input id="emobile" name="emobile" placeholder="Parent number...." class="form-control"
+                                    required="required" type="number" pattern="[0-9]{10}"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter your parent phone number*
+                                            </i></b>
+                                    </h4>
+                                </small>
                                 @error('emobile')
                                 <div class="error-message">{{ $message }}</div>
                                 @enderror
@@ -123,7 +140,7 @@
                             <div class="form-group col-md-6">
 
                                 <select id="pwd" name="pwd" class="form-control">
-                                    <option selected>disability ...</option>
+                                    <option selected>Disability ....</option>
                                     <option value="yes">YES</option>
                                     <option value="no">NO</option>
 
@@ -132,7 +149,7 @@
                             <div class="form-group col-md-6">
 
                                 <select id="passport" name="passport" class="form-control">
-                                    <option selected>Passport...</option>
+                                    <option selected>Passport....</option>
                                     <option value="yes">YES</option>
                                     <option value="no">NO</option>
 
@@ -140,13 +157,13 @@
                             </div>
                             <div class="form-group col-md-6" id="passportField" style="display: none;">
 
-                                <input id="passportNumber" name="passportNumber" placeholder="passport number."
+                                <input id="passportNumber" name="passportNumber" placeholder="Passport number...."
                                     class="form-control" type="text">
 
                             </div>
                             <div class="form-group col-md-6" id="dateField" style="display: none;">
-                                <lebel class="pb-4">Expiry date</lebel>
-                                <input id="date" name="passdate" placeholder="passport number." class="form-control"
+                                <lebel class="pb-4">Passport expiry date....</lebel>
+                                <input id="date" name="passdate" placeholder="passport." class="form-control"
                                     type="date">
 
                             </div>
@@ -154,7 +171,7 @@
                             <div class="form-group col-md-6">
 
                                 <select id="subcounty" class="form-control" name="subcounty" onchange="populateWards()">
-                                    <option selected>subcounty ...</option>
+                                    <option selected>Select your subcounty ....</option>
                                     <option value="mandera">Mandera East</option>
                                     <option value="rhamu">Rhamu</option>
                                     <option value="elwak">Elwak</option>
@@ -166,14 +183,14 @@
                             <div class="form-group col-md-6">
 
                                 <select id="ward" name="ward" class="form-control">
-                                    <option selected>ward ...</option>
+                                    <option selected>Select your Ward ....</option>
 
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
 
                                 <select id="course" name="course1" class="form-control">
-                                    <option selected>select course(first option) ...</option>
+                                    <option selected>Select course(first option) ...</option>
                                     <option value="Medicine">Medicine</option>
                                     <option value="Pharmacy">Pharmacy</option>
                                     <option value="dentist">Dentistry</option>
@@ -210,7 +227,7 @@
                             <div class="form-group col-md-6">
 
                                 <select id="course" name="course2" class="form-control">
-                                    <option selected>select course( second option) ...</option>
+                                    <option selected>Select course( second option) ...</option>
                                     <option value="Medicine">Medicine</option>
                                     <option value="Pharmacy">Pharmacy</option>
                                     <option value="dentist">Dentistry</option>
@@ -247,7 +264,7 @@
                             <div class="form-group col-md-6">
 
                                 <select id="course" name="course3" class="form-control">
-                                    <option selected>select course(third option) ...</option>
+                                    <option selected>Select course(third option) ...</option>
                                     <option value="Medicine">Medicine</option>
                                     <option value="Pharmacy">Pharmacy</option>
                                     <option value="dentist">Dentistry</option>
@@ -289,12 +306,20 @@
                             <div class="form-group col-md-6">
                                 <label for="photo">Passport photo:</label>
                                 <input id="image" name="image" class="form-control" type="file"
-                                    accept=".png, .jpeg, .jpg, image/*">
+                                    accept=".png, .jpeg, .jpg, image/*"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Upload your photo(Image only)
+                                                *</i></b>
+                                    </h4>
+                                </small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="photo">Id Copy:</label>
                                 <input id="id_copy" name="id_copy" class="form-control" type="file"
-                                    accept=".png, .jpeg, .jpg, image/*">
+                                    accept=".png, .jpeg, .jpg, image/*"> <small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Upload your ID(Image only)
+                                                *</i></b>
+                                    </h4>
+                                </small>
                             </div>
                             <!-- <div class="form-group col-md-6">
                                 <label for="photo">KCSE Result Slip:</label>

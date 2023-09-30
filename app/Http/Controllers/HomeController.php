@@ -71,7 +71,7 @@ class HomeController extends Controller
     
         }
        
-
+ 
 
         public function uni(Request $request) {
             $request->validate([
@@ -79,9 +79,9 @@ class HomeController extends Controller
                 'idno' => 'nullable|unique:universities,idno',
                
             ]);
-        
+            $user = auth()->user();
             $uni = new University();
-           
+            $uni->user_id = $user->id;
             $uni->fullname = $request->input('fullname');
             $uni->idno = $request->input('idno');
             $uni->school = $request->input('school');
@@ -139,8 +139,9 @@ class HomeController extends Controller
                     
                     // other validation rules for other fields
                 ]);
-            
+                $user = auth()->user();
                 $job = new Job();
+                $job->user_id = $user->id;
                 $job->fullname = $request->input('fullname');
                 $job->birth_date = $request->input('dob');
                 $job->education = $request->input('education');
@@ -200,8 +201,9 @@ class HomeController extends Controller
                 'regno' => 'nullable|unique:registrations,reg_number',
                 // other validation rules for other fields
             ]);
-        
+            $user = auth()->user();
             $register = new Registration();
+            $register->user_id = $user->id;
             
             $register->group_type = $request->input('grouptype');
             $register->group_name = $request->input('gname');
@@ -227,5 +229,66 @@ class HomeController extends Controller
         }
     
       
+        public function appview()
+        {
+            $user = auth()->user();
+            
+            // Retrieve jobs, universities, and registrations associated with the current user
+            $jobs = Job::where('user_id', $user->id)->get();
+            $universities = University::where('user_id', $user->id)->get();
+            $registrations = Registration::where('user_id', $user->id)->get();
+        
+            return view('frontend.profile', compact('jobs', 'universities', 'registrations'));
+        }
+        public function profileedit(Request $request,$id)
+        {
+          $jobs = Job::findOrFail($id);
+          return view('frontend.profile-edit')->with('Job', $jobs);
+                      
+        }
+
+        public function profileupdate(Request $request,$id){
+
+            $job = Job::find($id);
+            $job->fullname = $request->input('fullname');
+            
+            $job->education = $request->input('education');
+            $job->qualification = $request->input('qualification');
+            $job->mobile = $request->input('mobile');
+           
+            $job->idno = $request->input('idno');
+           
+            $job->grade = $request->input('grade');
+            
+            $job->email = $request->input('email');
+            $job->passport = $request->input('passport');
+            $job->passport_date = $request->input('passdate');
+           
+            $job->employer = $request->input('employer');
+            $job->exp_year = $request->input('experience');
+            $job->position = $request->input('job');
+            $job->work = $request->input('work');
+            $job->passport_no = $request->input('passportNumber');
+            if ($request->hasfile('image')) {
+                $avatar = $request->file('image');
+                $filename = time().'.'.$avatar->getClientOriginalExtension();
+                Image::make($avatar)->resize(300, 300)->save(public_path('uploads/image_files/'.$filename));
+                $avatar->move('public/uploads/image_files/', $filename);
+                $job->image = $filename;
+            }
+            if ($request->hasfile('id_copy')) {
+                $avatar = $request->file('id_copy');
+                $filename = time().'.'.$avatar->getClientOriginalExtension();
+                Image::make($avatar)->resize(300, 300)->save(public_path('uploads/image_files/'.$filename));
+                $avatar->move('public/uploads/image_files/', $filename);
+                $job->id_copy = $filename;
+            }
+            $job->save();
+        
+            
+            $request->session()->flash('success', ' application updated successfully!');
+        
+             return redirect('user/profile');
+        }        
         
 }

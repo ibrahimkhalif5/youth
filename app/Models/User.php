@@ -45,6 +45,22 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-   
+    // Define the one-to-one relationship with Job
+    public function job()
+    {
+        return $this->hasOne(Job::class);
+    }
+
+    // Define the one-to-one relationship with University
+    public function university()
+    {
+        return $this->hasOne(University::class);
+    }
+
+    // Define the one-to-one relationship with Registration
+    public function registration()
+    {
+        return $this->hasOne(Registration::class);
+    }
 
 }

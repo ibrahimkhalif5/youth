@@ -22,6 +22,11 @@
         <span>&#10004;</span> {{ session('success') }}
     </div>
     @endif
+    <style>
+    .toggle-fields {
+        display: none;
+    }
+    </style>
     <section class="testimonial py-5" id="testimonial">
         <div class="container">
             <div class="row">
@@ -31,6 +36,8 @@
                             <img src="{{asset('front/images/mdr.png')}}" style="width:30%">
                             <h2 class="py-3">Mandera county Job Plecement program</h2>
                             <hr>
+
+
 
                         </div>
                     </div>
@@ -44,12 +51,12 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input id="fullname" name="fullname" placeholder="Applicant Name" class="form-control"
-                                    type="text" required="required">
+                                <input id="fullname" name="fullname" value="{{ Auth::user()->name }}"
+                                    class="form-control" type="text" required="required" readonly>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                                    onblur="validateEmail()">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    value="{{ Auth::user()->email }}" onblur="validateEmail()" readonly>
                                 <span id="emailError" style="color: red; display: none;">Invalid email address</span>
                             </div>
 
@@ -65,14 +72,14 @@
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="mobile" name="mobile" placeholder="mobile number." class="form-control"
+                                <input id="mobile" name="mobile" placeholder="Mobile number....." class="form-control"
                                     required="required" type="number" pattern="[0-9]{10}">
                                 @error('mobile')
                                 <div class="error-message">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="idno" name="idno" placeholder="Id number." class="form-control"
+                                <input id="idno" name="idno" placeholder="Id number..." class="form-control"
                                     required="required" type="number" pattern="[0-9]{8}">
                                 <div id="id-number-error" class="error-message"></div>
                                 @error('idno')
@@ -88,12 +95,20 @@
 
 
                             <div class="form-group col-md-6">
-                                <input id="emergency" name="emergency" placeholder="parent name.." class="form-control"
-                                    type="text" required="required">
+                                <input id="emergency" name="emergency" placeholder="Parent Fullname..."
+                                    class="form-control" type="text" required="required"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter your parent Name Mother/Father*
+                                            </i></b>
+                                    </h4>
+                                </small>
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="emobile" name="emobile" placeholder="parent number..." class="form-control"
-                                    required="required" type="number" pattern="[0-9]{10}">
+                                <input id="emobile" name="emobile" placeholder="Parent phone number..."
+                                    class="form-control" required="required" type="number" pattern="[0-9]{10}"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter your parent phone number*
+                                            </i></b>
+                                    </h4>
+                                </small>
                                 @error('emobile')
                                 <div class="error-message">{{ $message }}</div>
                                 @enderror
@@ -103,7 +118,7 @@
                             <div class="form-group col-md-6">
 
                                 <select id="pwd" name="pwd" class="form-control">
-                                    <option selected>disability ...</option>
+                                    <option selected>Disability ...</option>
                                     <option value="yes">YES</option>
                                     <option value="no">NO</option>
 
@@ -120,41 +135,47 @@
                             </div>
                             <div class="form-group col-md-6" id="passportField" style="display: none;">
 
-                                <input id="passportNumber" name="passportNumber" placeholder="passport number."
+                                <input id="passportNumber" name="passportNumber" placeholder="Passport number..."
                                     class="form-control" type="text">
 
                             </div>
                             <div class="form-group col-md-6" id="dateField" style="display: none;">
                                 <lebel class="pb-4">Expiry date</lebel>
-                                <input id="date" name="passdate" placeholder="passport number." class="form-control"
-                                    type="date">
+                                <input id="date" name="passdate" placeholder="passport Expiry date."
+                                    class="form-control" type="date">
 
                             </div>
                             <div class="form-group col-md-6">
 
                                 <select id="education" class="form-control" name="education">
-                                    <option selected>Highest education Level ...</option>
+                                    <option selected>Highest Education Level ...</option>
                                     <option value="postgraduate">Masters Degree</option>
                                     <option value="undergraduate">Bachelors Degree</option>
                                     <option value="college">College</option>
                                     <option value="vocational">Vocational</option>
                                     <option value="kcse">Secondary</option>
                                     <option value="kcpe">Primary</option>
+                                    <option value="madarasa">Madarasa</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <input id="grade" name="grade" placeholder="highest education grade "
+                                <input id="grade" name="grade" placeholder="Highest education grade.... "
                                     class="form-control" type="text" required="required">
                             </div>
                             <div class="form-group col-md-6">
                                 <input id="qualification" name="qualification" placeholder="Field of Study"
-                                    class="form-control" type="text" required="required">
+                                    class="form-control" type="text" required="required"><small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter your Field of Study example
+                                                Nurse,Teacher etc*
+                                            </i></b>
+                                    </h4>
+                                </small>
                             </div>
 
                             <div class="form-group col-md-6">
 
                                 <select id="subcounty" class="form-control" name="subcounty" onchange="populateWards()">
-                                    <option selected>subcounty ...</option>
+                                    <option selected>Select Subcounty ...</option>
                                     <option value="mandera">Mandera East</option>
                                     <option value="rhamu">Rhamu</option>
                                     <option value="elwak">Elwak</option>
@@ -166,43 +187,65 @@
                             <div class="form-group col-md-6">
 
                                 <select id="ward" name="ward" class="form-control">
-                                    <option selected>ward ...</option>
+                                    <option selected>Select Ward ...</option>
 
                                 </select>
                             </div>
                             <div class="form-group col-md-6">
-
                                 <select id="experience" class="form-control" name="experience">
                                     <option selected>Years of experience ...</option>
+                                    <option value="0">None</option>
                                     <option value="1">1-2 years</option>
                                     <option value="3">3 years</option>
                                     <option value="4">4-6 years</option>
                                     <option value="5">above 7 years</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
-                                <input id="employer" name="employer" placeholder="employer name.." class="form-control"
-                                    type="text" required="required">
 
+                            <div class="form-group col-md-6 toggle-fields">
+                                <input id="employer" name="employer" placeholder="Employer Name.." class="form-control"
+                                    type="text"> <small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter your recent Employer Name*
+                                            </i></b>
+                                    </h4>
+                                </small>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 toggle-fields">
                                 <input id="job" name="job" placeholder="Position held.." class="form-control"
-                                    type="text" required="required">
+                                    type="text">
+                                <small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Enter your recent job
+                                                designation*</i></b>
+                                    </h4>
+                                </small>
                             </div>
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-12 toggle-fields">
                                 <label for="work">Duties & Responsibilities</label>
                                 <textarea id="work" name="work" cols="40" rows="5" class="form-control"></textarea>
+                                <h4 class="pb-4 " style="color:green;"><b><i>*Enter your recent duties &
+                                            Responsibilities*
+                                        </i></b>
+                                </h4>
                             </div>
+
 
                             <div class="form-group col-md-6">
                                 <label for="photo">Passport photo:</label>
                                 <input id="image" name="image" class="form-control" type="file"
-                                    accept=".png, .jpeg, .jpg, image/*">
+                                    accept=".png, .jpeg, .jpg, image/*"> <small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Upload your photo(Image only)
+                                                *</i></b>
+                                    </h4>
+                                </small>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="photo">Id Copy:</label>
                                 <input id="id_copy" name="id_copy" class="form-control" type="file"
-                                    accept=".png, .jpeg, .jpg, image/*">
+                                    accept=".png, .jpeg, .jpg, image/*"> <small>
+                                    <h4 class="pb-4 " style="color:green;"><b><i>*Upload your ID Copy(Image only)
+                                                *</i></b>
+                                    </h4>
+                                </small>
                             </div>
 
                         </div>

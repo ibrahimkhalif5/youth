@@ -16,22 +16,34 @@
                             <form class="" method="POST" action="{{url('opportunities')}}"
                                 enctype="multipart/form-data">
                                 @csrf
-
+                                <div class="form-group">
+                                    <label>Opportunity type</label>
+                                    <select class="form-control" id="role" name="type">
+                                        <option selected="select">Select....</option>
+                                        <option value="jobs">Jobs</option>
+                                        <option value="training">Training</option>
+                                        <option value="intern">Internship</option>
+                                    </select>
+                                </div>
                                 <div class="form-group">
 
                                     <input type="text" class="form-control" name="title" id="title"
                                         placeholder="Enter Title example Training,Jobs or Intern">
                                 </div>
-                                <div class="form-group">
-
+                                <div class="form-group vacancy-field">
                                     <input type="text" class="form-control" name="vacancy"
                                         placeholder="Enter Vacancy Number">
+                                </div>
+
+                                <div class="form-group venue-field">
+                                    <input type="text" class="form-control" name="venue"
+                                        placeholder="Enter Training Venue">
                                 </div>
 
                                 <div class="form-group">
 
                                     <textarea class="form-control" name="description" id="description"
-                                        placeholder="Enter Job Description"></textarea>
+                                        placeholder="Enter  Description"></textarea>
                                 </div>
 
                                 <div class="form-group">

@@ -325,7 +325,7 @@ section,
     width: 100%;
 }
 .container {
-    width: 1270px;
+    width: 100%;
 }
 .content_wrapper {
     position: relative;
@@ -935,7 +935,7 @@ body.cms_index5 {
     background-color: #f1594f;
 }
 .find_course_form_inner {
-    background-color: #56677b;
+    background-color: #008000;
     text-align: center;
 }
 .find_course_form_inner h2 {
@@ -1127,7 +1127,7 @@ body.cms_index5 {
     min-height: 580px;
     top: 0;
     bottom: 0;
-    background-image: url(../images/class2.jpg);
+    background-image: url(../images/logo1.png);
     background-size: cover;
     background-position: center center;
     position: absolute;
@@ -1292,12 +1292,12 @@ body.cms_index5 {
     margin-bottom: 10px;
     z-index: 9;
 }
-.course_block:hover .img_wrap {
+/* .course_block:hover .img_wrap {
     -webkit-transform: rotateY(180deg);
     -webkit-transform-style: preserve-3d;
     transform: rotateY(180deg);
     transform-style: preserve-3d;
-}
+} */
 .course_block:hover .img_wrap img {
     filter: brightness(50%);
 }

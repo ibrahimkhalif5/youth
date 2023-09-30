@@ -51,6 +51,7 @@ class AdminController extends Controller
         public function store(Request $request) {
 
             $job = new Career();
+            $job->type = $request->input('type');
             $job->title = $request->input('title');
             $job->description = $request->input('description');
             $job->vacancy = $request->input('vacancy');
@@ -58,7 +59,7 @@ class AdminController extends Controller
             if ($request->hasfile('image')) {
                 $avatar = $request->file('image');
                 $filename = time().'.'.$avatar->getClientOriginalExtension();
-                Image::make($avatar)->save(public_path('uploads/image_files/'.$filename));
+                Image::make($avatar)->resize(300, 300)->save(public_path('uploads/image_files/'.$filename));
                 $avatar->move('public/uploads/image_files/', $filename);
                 $job->image = $filename;
             }
@@ -245,4 +246,37 @@ class AdminController extends Controller
         {
             $this->middleware('auth');
         }
+// opportunities edit
+public function jobedit(Request $request,$id)
+{
+    $user = Career::findOrFail($id);
+    // dd($property);
+
+    return view('backend.career.edit')->with('Career', $user);
+}
+
+
+/// opportunity update
+public function jobupdate(Request $request,$id){
+
+    $users = Career::find($id);
+    $users->type = $request->input('type');
+    $users->title = $request->input('title');
+    $users->description = $request->input('description');
+    $users->status = $request->input('status');
+    $users->venue = $request->input('venue');
+    $users->vacancy = $request->input('vacancy');
+    if ($request->hasfile('image')) {
+        $avatar = $request->file('image');
+        $filename = time().'.'.$avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(300,300)->save(public_path('uploads/image_files/'.$filename));
+        $avatar->move('public/uploads/image_files/', $filename);
+        $users->image = $filename;
+    }
+    
+
+    $users->save();
+
+return redirect('/view-opportunities')->with('status', 'User record updated successfully');
+}
 }

@@ -8,7 +8,7 @@
         style="background: url('{{asset('front/images/sport1.JPG')}}'); background-attachment: fixed; background-position: 50% 50%;">
         <div class="breadcrumb_wrap_inner">
             <div class="container">
-                <h1>Application instructions</h1>
+                <h1>about mandera Empowermenthub</h1>
                 <ul class="breadcrumbs">
                     <li><a href="/">Home</a> /</li>
 
@@ -48,7 +48,9 @@
                                 Disabilities (PWDs), and Women. By registering on our platform, you become a vital part
                                 of this
                                 ambitious vision.</p>
+
                             <h4><b>Your Data, Our Catalyst for Informed Change</b></h4>
+
                             <p>The Mandera Empowerment Hub is more than just a website; it's an engine for change. Your
                                 registration empowers us to better understand and serve our community's unique needs,
                                 while also
@@ -57,7 +59,7 @@
                                 opportunities that
                                 truly benefit our diverse community.</p>
 
-                            .!</p>
+                            <br></p>
                             <a href="/login" class="btn btn-success">Proceed to Application</a>
                         </div>
 
